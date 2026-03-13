@@ -74,7 +74,7 @@ nav {
   padding: 24px 64px;
 }
 .nav-logo {
-  font-family: var(--serif); font-size: 1.05rem;
+  font-family: var(--serif); font-size: 1.4rem;
   color: var(--text); letter-spacing: 0.02em;
 }
 .nav-logo span { color: var(--accent); }

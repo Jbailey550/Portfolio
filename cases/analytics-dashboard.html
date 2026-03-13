@@ -52,6 +52,7 @@
   </div>
 
   <article class="study-body">
+  <div class="study-body-inner">
 
     <h2>The Challenge</h2>
     <p>The existing analytics tool was built by engineers for engineers. Product managers and executives — the people who needed the data most — were bouncing to Excel and building their own reports. That's a signal the tool had failed them.</p>
@@ -76,6 +77,11 @@
     <h2>Results</h2>
     <p>Adoption among non-technical users increased by 60% in the quarter following launch. Monthly active users for the dashboard tool doubled. The product team reported a significant drop in ad-hoc data requests to the engineering team.</p>
 
+
+    <!-- Section image — replace with: <img src="../images/your-image.jpg" alt="description" class="body-img" /> -->
+    <div class="section-img-ph"><span>Image — drop your asset here</span></div>
+
+  </div>
   </article>
 
   <div class="next-case">
@@ -111,7 +117,8 @@
   .study-cover { margin: 0 64px; height: 500px; background: var(--bg-2); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; overflow: hidden; }
   .cover-img { width: 100%; height: 100%; object-fit: cover; }
   .cover-placeholder { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); border: 1px solid var(--border); padding: 16px 28px; }
-  .study-body { padding: 80px 64px; max-width: 1920px; margin: 0 auto; }
+  .study-body { padding: 80px 64px; }
+  .study-body-inner { max-width: 760px; }
   .study-body h2 { font-family: var(--serif); font-size: 1.75rem; font-weight: 700; margin-bottom: 22px; padding-top: 52px; }
   .study-body h2:first-child { padding-top: 0; }
   .study-body p { font-size: 1rem; line-height: 1.85; color: rgba(240,237,232,0.8); margin-bottom: 18px; }
@@ -120,6 +127,21 @@
   .study-body li { margin-bottom: 8px; line-height: 1.7; }
   .study-body strong { color: var(--text); font-weight: 500; }
   .body-img { width: 100%; margin: 36px 0; border: 1px solid var(--border); display: block; }
+  .section-img-ph {
+    width: 100%; aspect-ratio: 16 / 9; margin: 40px 0;
+    background: var(--bg-2); border: 1px dashed rgba(255,255,255,0.12);
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .section-img-ph::before {
+    content: ''; position: absolute; inset: 0;
+    background: repeating-linear-gradient(-45deg, transparent, transparent 20px, rgba(255,255,255,0.015) 20px, rgba(255,255,255,0.015) 21px);
+  }
+  .section-img-ph span {
+    font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--text-dim);
+    border: 1px dashed rgba(255,255,255,0.12); padding: 8px 16px; position: relative; z-index: 1;
+  }
   .next-case { border-top: 1px solid var(--border); padding: 0 64px 80px; }
   .next-link { display: flex; align-items: center; gap: 24px; padding: 48px 0; transition: gap 0.3s var(--ease); }
   .next-link:hover { gap: 32px; }
