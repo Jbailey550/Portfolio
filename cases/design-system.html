@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Design System — Your Name</title><!-- EDIT -->
+  <title>Building a Scalable Design System — John Bailey</title>
   <link rel="stylesheet" href="../style.css" />
 </head>
 <body>
@@ -11,33 +11,39 @@
 <nav>
   <div class="nav-inner">
     <a href="../index.html" class="nav-logo">John Bailey<span>.</span></a>
-  <div class="nav-links">
-    <a href="../cases.html" class="nav-link active">Case Studies</a>
-    <a href="../resume.html" class="nav-link">Résumé</a>
-    <a href="../experiments.html" class="nav-link">Experiments</a>
+    <div class="nav-links">
+      <a href="../cases.html" class="nav-link active">Case Studies</a>
+      <a href="../resume.html" class="nav-link">Résumé</a>
+      <a href="../experiments.html" class="nav-link">Experiments</a>
       <a href="../contact.html" class="nav-link">Contact</a>
-  </div>
+    </div>
   </div>
 </nav>
 
 <main>
 
-  <div class="study-hero">
-    <div class="study-hero-left">
-      <a href="../cases.html" class="back-link">
-        <svg width="16" height="10" viewBox="0 0 16 10" fill="none">
-          <path d="M15 5H1M6 1L1 5l5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        All case studies
-      </a>
-      <h1 class="study-title">Building a Scalable Design System from Scratch</h1><!-- EDIT -->
-      <p class="study-desc">A unified component library and documentation system adopted across four product teams within six months of launch.</p><!-- EDIT -->
-    </div>
-    <div class="study-meta">
-      <div class="meta-item"><label>Role</label><span>Lead Designer</span></div><!-- EDIT -->
-      <div class="meta-item"><label>Duration</label><span>6 months · 2023</span></div><!-- EDIT -->
-      <div class="meta-item"><label>Team</label><span>Design, Frontend Engineering</span></div><!-- EDIT -->
-      <div class="meta-item"><label>Tools</label><span>Figma, Storybook, Notion</span></div><!-- EDIT -->
+  <div class="study-hero-wrap">
+    <div class="study-hero">
+      <div class="study-hero-left">
+        <a href="../cases.html" class="back-link">
+          <svg width="16" height="10" viewBox="0 0 16 10" fill="none">
+            <path d="M15 5H1M6 1L1 5l5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          All case studies
+        </a>
+        <h1 class="study-title">Building a Scalable Design System from Scratch</h1><!-- EDIT -->
+        <p class="study-desc">A unified component library and documentation system adopted across four product teams within six months of launch.</p><!-- EDIT -->
+      </div>
+
+      <div class="impact-sidebar">
+        <div class="impact-label">Impact summary</div>
+        <div class="impact-bullets">
+          <div class="impact-bullet"><span class="bullet-text">Led end-to-end build of a design system across four product teams</span></div><!-- EDIT -->
+          <div class="impact-bullet"><span class="bullet-text">Co-owned with engineering from day one to ensure adoption and code parity</span></div><!-- EDIT -->
+          <div class="impact-bullet"><span class="bullet-text">80+ components built with full variant documentation in Figma and Storybook</span></div><!-- EDIT -->
+          <div class="impact-bullet"><span class="bullet-text">New feature design time reduced by an estimated 30% within six months</span></div><!-- EDIT -->
+        </div>
+      </div>
     </div>
   </div>
 
@@ -50,9 +56,12 @@
   <div class="study-body-layout">
   <div class="study-body-inner">
 
-    <h2>Why It Was Needed</h2>
+    <h2 id="challenge">The Challenge</h2>
     <p>Four product teams. Four different button styles. Three typeface scales. No shared language. The company had scaled fast and design debt had compounded silently for two years.</p>
     <p>Every new feature required renegotiating solved problems. Engineers built the same component multiple times. QA found inconsistencies weekly.</p>
+
+    <!-- Section image — replace with: <img src="../images/your-image.jpg" alt="description" class="body-img" /> -->
+    <div class="section-img-ph"><span>Image — drop your asset here</span></div>
 
     <h2 id="approach">Approach</h2>
     <p>Design systems fail when they're built in isolation and handed over. I made a deliberate choice to treat this as an <strong>infrastructure project</strong>, not a design deliverable — which meant engineers were co-owners from day one.</p>
@@ -63,7 +72,10 @@
 
     <p>We started with an audit: cataloguing every UI component across all four products. The results were humbling. 23 variations of input fields. 11 button styles. No single source of truth for spacing.</p>
 
-    <h2>What We Built</h2>
+    <!-- Section image — replace with: <img src="../images/your-image.jpg" alt="description" class="body-img" /> -->
+    <div class="section-img-ph"><span>Image — drop your asset here</span></div>
+
+    <h2 id="building">Building the System</h2>
     <ul>
       <li>Figma component library with 80+ components, variants, and documented usage guidelines</li>
       <li>Storybook as the live code reference, keeping design and implementation in sync</li>
@@ -71,9 +83,11 @@
       <li>Adoption roadmap that migrated each product team gradually, not all at once</li>
     </ul>
 
+    <!-- Section image — replace with: <img src="../images/your-image.jpg" alt="description" class="body-img" /> -->
+    <div class="section-img-ph"><span>Image — drop your asset here</span></div>
+
     <h2 id="impact">Impact</h2>
     <p>Within six months, all four product teams had migrated their active workflows to the system. New feature design time dropped by an estimated 30%. Design-to-dev handoff issues fell significantly in quarterly retros.</p>
-
 
     <!-- Section image — replace with: <img src="../images/your-image.jpg" alt="description" class="body-img" /> -->
     <div class="section-img-ph"><span>Image — drop your asset here</span></div>
@@ -105,75 +119,83 @@
 
 <footer>
   <div class="footer-inner">
-  <p>© 2024 — Your Name</p><!-- EDIT -->
-  <p>Designed with intention</p>
+    <p>© 2025 — John Bailey</p>
+    <p>Designed with intention</p>
   </div>
 </footer>
 
 <style>
   .study-hero-wrap { border-bottom: 1px solid var(--border); }
-  .study-hero { padding: 160px 64px 80px; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: 1fr 300px; gap: 80px; align-items: end; }
-  .back-link { display: inline-flex; align-items: center; gap: 10px; font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 32px; transition: color 0.25s; }
+  .study-hero { padding: 160px 64px 80px; max-width: 1920px; margin: 0 auto; display: grid; grid-template-columns: 1fr 300px; gap: 80px; align-items: start; }
+  .back-link { display: inline-flex; align-items: center; gap: 10px; font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 32px; transition: color 0.25s; }
   .back-link:hover { color: var(--pop); }
-  .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
   .study-title { font-family: var(--serif); font-size: clamp(2.2rem, 4.5vw, 4rem); font-weight: 700; line-height: 1.1; margin-bottom: 22px; }
-  .study-desc { font-size: 1.05rem; color: var(--text-muted); max-width: 540px; line-height: 1.75; }
-  .study-meta { display: flex; flex-direction: column; gap: 26px; }
-  .meta-item label { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 5px; }
-  .meta-item span { font-size: 0.9rem; }
-  .study-cover { margin: 0 64px; height: 500px; background: var(--bg-2); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .study-desc { font-size: 1.05rem; color: var(--muted); max-width: 540px; line-height: 1.75; }
+  .impact-sidebar { border: 1px solid rgba(255,255,255,0.1); background: var(--bg-2); padding: 28px; position: sticky; top: 72px; }
+  .impact-label { font-family: var(--mono); font-size: 0.56rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .impact-label::after { content: ''; flex: 1; height: 1px; background: rgba(200,184,154,0.3); }
+  .impact-bullets { display: flex; flex-direction: column; }
+  .impact-bullet { display: flex; align-items: center; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--border); }
+  .impact-bullet:last-child { border-bottom: none; padding-bottom: 0; }
+  .impact-bullet::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--pop); flex-shrink: 0; }
+  .bullet-text { font-size: 0.85rem; color: var(--text); line-height: 1.5; }
+  .study-cover { width: 100%; max-width: 1920px; margin: 0 auto; height: 500px; background: var(--bg-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: center; overflow: hidden; }
   .cover-img { width: 100%; height: 100%; object-fit: cover; }
-  .cover-placeholder { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); border: 1px solid var(--border); padding: 16px 28px; }
-  .study-body { padding: 80px 64px; }
-  .study-body-inner { max-width: 760px; }
-  .study-body h2 { font-family: var(--serif); font-size: 1.75rem; font-weight: 700; margin-bottom: 22px; padding-top: 52px; }
-  .study-body h2:first-child { padding-top: 0; }
-  .study-body p { font-size: 1rem; line-height: 1.85; color: rgba(240,237,232,0.8); margin-bottom: 18px; }
-  .study-body blockquote { border-left: 2px solid var(--pop); padding: 18px 26px; margin: 36px 0; background: rgba(200,184,154,0.06); font-family: var(--serif); font-size: 1.2rem; font-style: italic; color: var(--text); line-height: 1.6; }
-  .study-body ul { padding-left: 24px; margin-bottom: 20px; color: rgba(240,237,232,0.8); }
-  .study-body li { margin-bottom: 8px; line-height: 1.7; }
-  .study-body strong { color: var(--text); font-weight: 500; }
+  .cover-placeholder { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dim); border: 1px solid var(--border); padding: 16px 28px; }
+  .study-body { padding: 80px 64px; max-width: 1920px; margin: 0 auto; }
+  .study-body-layout { display: grid; grid-template-columns: 1fr 220px; gap: 80px; align-items: start; }
+  .study-body-inner { max-width: 720px; }
+  .study-body-inner h2 { font-family: var(--serif); font-size: 1.75rem; font-weight: 700; margin-bottom: 22px; padding-top: 52px; color: var(--text); }
+  .study-body-inner h2:first-child { padding-top: 0; }
+  .study-body-inner p { font-size: 1rem; line-height: 1.85; color: rgba(240,237,232,0.8); margin-bottom: 18px; }
+  .study-body-inner blockquote { border-left: 2px solid var(--pop); padding: 18px 26px; margin: 36px 0; background: rgba(200,184,154,0.06); font-family: var(--serif); font-size: 1.2rem; font-style: italic; color: var(--text); line-height: 1.6; }
+  .study-body-inner ul, .study-body-inner ol { padding-left: 24px; margin-bottom: 20px; color: rgba(240,237,232,0.8); }
+  .study-body-inner li { margin-bottom: 8px; line-height: 1.7; }
+  .study-body-inner strong { color: var(--text); font-weight: 500; }
+  .study-body-inner em { color: var(--accent); }
+  .study-body-inner hr { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
   .body-img { width: 100%; margin: 36px 0; border: 1px solid var(--border); display: block; }
-  .section-img-ph {
-    width: 100%; aspect-ratio: 16 / 9; margin: 40px 0;
-    background: var(--bg-2); border: 1px dashed rgba(255,255,255,0.12);
-    display: flex; align-items: center; justify-content: center;
-    position: relative; overflow: hidden;
-  }
-  .section-img-ph::before {
-    content: ''; position: absolute; inset: 0;
-    background: repeating-linear-gradient(-45deg, transparent, transparent 20px, rgba(255,255,255,0.015) 20px, rgba(255,255,255,0.015) 21px);
-  }
-  .section-img-ph span {
-    font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.12em;
-    text-transform: uppercase; color: var(--text-dim);
-    border: 1px dashed rgba(255,255,255,0.12); padding: 8px 16px; position: relative; z-index: 1;
-  }
-  .next-case { border-top: 1px solid var(--border); padding: 0 64px 80px; }
+  .section-img-ph { width: 100%; aspect-ratio: 16 / 9; margin: 40px 0; background: var(--bg-2); border: 1px dashed rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+  .section-img-ph::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(-45deg, transparent, transparent 20px, rgba(255,255,255,0.015) 20px, rgba(255,255,255,0.015) 21px); }
+  .section-img-ph span { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dim); border: 1px dashed rgba(255,255,255,0.12); padding: 8px 16px; position: relative; z-index: 1; }
+  .quick-links { position: sticky; top: 88px; }
+  .quick-links-label { font-family: var(--mono); font-size: 0.56rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+  .quick-links-label::after { content: ''; flex: 1; height: 1px; background: rgba(200,184,154,0.3); }
+  .quick-links-list { display: flex; flex-direction: column; }
+  .quick-link-item { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-decoration: none; padding: 11px 0; border-bottom: 1px solid var(--border); transition: color 0.2s; display: flex; align-items: center; gap: 8px; }
+  .quick-link-item:last-child { border-bottom: none; }
+  .quick-link-item::before { content: ''; width: 3px; height: 3px; border-radius: 50%; background: var(--pop); flex-shrink: 0; opacity: 0; transition: opacity 0.2s; }
+  .quick-link-item:hover { color: var(--text); }
+  .quick-link-item:hover::before { opacity: 1; }
+  .quick-link-item.active { color: var(--text); }
+  .quick-link-item.active::before { opacity: 1; }
+  .next-case { border-top: 1px solid var(--border); padding: 0 64px 80px; max-width: 1920px; margin: 0 auto; }
   .next-link { display: flex; align-items: center; gap: 24px; padding: 48px 0; transition: gap 0.3s var(--ease); }
   .next-link:hover { gap: 32px; }
-  .next-label { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); }
+  .next-label { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dim); }
   .next-title { font-family: var(--serif); font-size: 1.6rem; font-weight: 700; flex: 1; }
   .next-link svg { color: var(--pop); flex-shrink: 0; }
-  @media (max-width: 768px) { .study-hero { grid-template-columns: 1fr; padding: 110px 24px 56px; gap: 40px; } .study-cover { margin: 0 24px; height: 280px; } .study-body { padding: 56px 24px; } .next-case { padding: 0 24px 60px; } }
+  @media (max-width: 768px) {
+    .study-hero { grid-template-columns: 1fr; padding: 110px 24px 56px; gap: 40px; }
+    .study-cover { height: 240px; }
+    .study-body { padding: 56px 24px; }
+    .study-body-layout { grid-template-columns: 1fr; gap: 0; }
+    .quick-links { position: static; margin-bottom: 48px; order: -1; }
+    .next-case { padding: 0 24px 60px; }
+  }
 </style>
 
-
 <script>
-  // Smooth scroll for quick links
   document.querySelectorAll('.quick-link-item').forEach(link => {
     link.addEventListener('click', e => {
       e.preventDefault();
       const target = document.querySelector(link.getAttribute('href'));
       if (target) {
-        const offset = 96;
-        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        const top = target.getBoundingClientRect().top + window.scrollY - 96;
         window.scrollTo({ top, behavior: 'smooth' });
       }
     });
   });
-
-  // Highlight active section in quick links as user scrolls
   const sections = document.querySelectorAll('.study-body-inner h2[id]');
   const links = document.querySelectorAll('.quick-link-item');
   const obs = new IntersectionObserver(entries => {
@@ -187,5 +209,6 @@
   }, { rootMargin: '-20% 0px -70% 0px' });
   sections.forEach(s => obs.observe(s));
 </script>
+
 </body>
 </html>
