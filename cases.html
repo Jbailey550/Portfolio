@@ -22,10 +22,12 @@
 
 <main>
 
+  <div class="page-hero-wrap">
   <div class="page-hero">
     <div class="page-label">Work</div>
     <h1 class="page-title">Case Studies</h1>
     <p class="page-sub">End-to-end design work spanning mobile apps, web products, and design systems — with the research and decisions that got there.</p>
+  </div>
   </div>
 
   <!-- ============================================================
@@ -43,10 +45,7 @@
         <h3>Fintech Onboarding Redesign</h3><!-- EDIT -->
         <p>Reducing drop-off through research-led design · 2024</p><!-- EDIT -->
       </div>
-      <div class="row-tags">
-        <span class="tag">Mobile</span><!-- EDIT -->
-        <span class="tag">UX Research</span><!-- EDIT -->
-      </div>
+      <div class="row-cta">View case study <svg width="12" height="8" viewBox="0 0 16 10" fill="none"><path d="M1 5h14M10 1l5 4-5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
     </a>
 
     <a href="cases/analytics-dashboard.html" class="case-row">
@@ -55,10 +54,7 @@
         <h3>Enterprise Analytics Dashboard</h3><!-- EDIT -->
         <p>Data visualisation for non-technical users · 2023</p><!-- EDIT -->
       </div>
-      <div class="row-tags">
-        <span class="tag">Dashboard</span><!-- EDIT -->
-        <span class="tag">SaaS</span><!-- EDIT -->
-      </div>
+      <div class="row-cta">View case study <svg width="12" height="8" viewBox="0 0 16 10" fill="none"><path d="M1 5h14M10 1l5 4-5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
     </a>
 
     <a href="cases/design-system.html" class="case-row">
@@ -67,10 +63,7 @@
         <h3>Scalable Design System</h3><!-- EDIT -->
         <p>Unifying four product teams under one component library · 2023</p><!-- EDIT -->
       </div>
-      <div class="row-tags">
-        <span class="tag">Design System</span><!-- EDIT -->
-        <span class="tag">Systems</span><!-- EDIT -->
-      </div>
+      <div class="row-cta">View case study <svg width="12" height="8" viewBox="0 0 16 10" fill="none"><path d="M1 5h14M10 1l5 4-5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
     </a>
 
   </div>
@@ -88,7 +81,7 @@
   .cases-list { padding: 0 64px 120px; max-width: 1920px; margin: 0 auto; }
 
   .case-row {
-    display: grid; grid-template-columns: 80px 1fr 220px;
+    display: grid; grid-template-columns: 80px 1fr auto;
     align-items: center; gap: 40px;
     padding: 36px 0; border-bottom: 1px solid var(--border);
     transition: padding-left 0.35s var(--ease);
@@ -111,12 +104,17 @@
   }
   .row-info p { font-size: 0.85rem; color: var(--text-muted); }
 
-  .row-tags { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; }
+  .row-cta {
+    display: inline-flex; align-items: center; gap: 8px; white-space: nowrap;
+    font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--pop); transition: gap 0.3s var(--ease);
+  }
+  .case-row:hover .row-cta { gap: 14px; }
 
   @media (max-width: 768px) {
     .cases-list { padding: 0 24px 80px; }
     .case-row { grid-template-columns: 56px 1fr; }
-    .row-tags { display: none; }
+    .row-cta { display: none; }
   }
 </style>
 

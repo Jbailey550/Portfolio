@@ -107,9 +107,11 @@ footer p {
 }
 
 /* ---- PAGE HERO (shared across inner pages) ---- */
+.page-hero-wrap {
+  border-bottom: 1px solid var(--border);
+}
 .page-hero {
   padding: 160px 64px 80px;
-  border-bottom: 1px solid var(--border);
   max-width: 1920px; margin: 0 auto;
 }
 .page-label {
