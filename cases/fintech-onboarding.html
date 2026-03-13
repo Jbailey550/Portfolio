@@ -95,7 +95,6 @@
          <img src="../images/your-image.jpg" alt="description" class="body-img wide" />
        ============================================================ -->
   <article class="study-body">
-  <div class="study-body-layout">
   <div class="study-body-inner">
 
     <h2 id="problem">The Problem</h2>
@@ -144,16 +143,6 @@
     <!-- Section image — replace with: <img src="../images/your-image.jpg" alt="description" class="body-img" /> -->
     <div class="section-img-ph"><span>Image — drop your asset here</span></div>
 
-  </div>
-    <aside class="quick-links">
-      <div class="quick-links-label">On this page</div>
-      <nav class="quick-links-list">
-        <a href="#problem" class="quick-link-item">The Problem</a>
-        <a href="#discovery" class="quick-link-item">Discovery & Research</a>
-        <a href="#approach" class="quick-link-item">Design Approach</a>
-        <a href="#outcome" class="quick-link-item">Outcome</a>
-      </nav>
-    </aside>
   </div>
   </article>
 
@@ -238,30 +227,7 @@
 
   /* Body — two column: content + quick links */
   .study-body { padding: 80px 64px; max-width: 1920px; margin: 0 auto; }
-  .study-body-layout { display: grid; grid-template-columns: 1fr 220px; gap: 80px; align-items: start; }
   .study-body-inner { max-width: 720px; }
-
-  /* Quick links sidebar */
-  .quick-links { position: static; }
-  .quick-links-label {
-    font-family: var(--mono); font-size: 0.56rem; letter-spacing: 0.18em;
-    text-transform: uppercase; color: var(--accent);
-    margin-bottom: 16px; display: flex; align-items: center; gap: 10px;
-  }
-  .quick-links-label::after { content: ''; flex: 1; height: 1px; background: rgba(200,184,154,0.3); }
-  .quick-links-list { display: flex; flex-direction: column; position:relative }
-  .quick-link-item {
-    font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.08em;
-    text-transform: uppercase; color: var(--muted); text-decoration: none;
-    padding: 11px 0; border-bottom: 1px solid var(--border);
-    transition: color 0.2s; display: flex; align-items: center; gap: 8px;
-  }
-  .quick-link-item:last-child { border-bottom: none; }
-  .quick-link-item::before { content: ''; width: 3px; height: 3px; border-radius: 50%; background: var(--pop); flex-shrink: 0; opacity: 0; transition: opacity 0.2s; }
-  .quick-link-item:hover { color: var(--text); }
-  .quick-link-item:hover::before { opacity: 1; }
-  .quick-link-item.active { color: var(--text); }
-  .quick-link-item.active::before { opacity: 1; }
   .study-body h2 {
     font-family: var(--serif); font-size: 1.75rem; font-weight: 700;
     margin-bottom: 22px; padding-top: 52px; color: var(--text);
@@ -327,41 +293,12 @@
     .study-hero { grid-template-columns: 1fr; padding: 110px 24px 56px; gap: 40px; }
     .study-cover { height: 240px; }
     .study-body { padding: 40px 24px; }
-    .study-body-layout { grid-template-columns: 1fr; gap: 0; }
-    .quick-links { position: static; margin-bottom: 48px; order: -1; }
     .body-img.wide { width: calc(100% + 48px); margin-left: -24px; }
     .next-case { padding: 0 24px 60px; }
   }
 </style>
 
 
-<script>
-  // Smooth scroll for quick links
-  document.querySelectorAll('.quick-link-item').forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      const target = document.querySelector(link.getAttribute('href'));
-      if (target) {
-        const offset = 96;
-        const top = target.getBoundingClientRect().top + window.scrollY - offset;
-        window.scrollTo({ top, behavior: 'smooth' });
-      }
-    });
-  });
 
-  // Highlight active section in quick links as user scrolls
-  const sections = document.querySelectorAll('.study-body-inner h2[id]');
-  const links = document.querySelectorAll('.quick-link-item');
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        links.forEach(l => l.classList.remove('active'));
-        const active = document.querySelector(`.quick-link-item[href="#${entry.target.id}"]`);
-        if (active) active.classList.add('active');
-      }
-    });
-  }, { rootMargin: '-20% 0px -70% 0px' });
-  sections.forEach(s => obs.observe(s));
-</script>
 </body>
 </html>
