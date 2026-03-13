@@ -77,7 +77,7 @@ nav {
 }
 .nav-logo {
   font-family: var(--serif); font-size: 1.4rem;
-  color: var(--text); letter-spacing: 0.02em;
+  color: #ffffff; letter-spacing: 0.02em;
 }
 .nav-logo span { color: var(--accent); }
 .nav-links { display: flex; gap: 40px; align-items: center; }
