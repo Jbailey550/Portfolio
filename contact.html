@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Your Name</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">YN<span>.</span></a>
+  <div class="nav-links">
+    <a href="cases.html" class="nav-link">Case Studies</a>
+    <a href="resume.html" class="nav-link">Résumé</a>
+    <a href="contact.html" class="nav-link active">Contact</a>
+  </div>
+</nav>
+
+<main>
+
+  <div class="page-hero">
+    <div class="page-label">Get in touch</div>
+    <h1 class="page-title">Contact</h1>
+    <p class="page-sub">Open to new projects, collaborations, and conversations about design. I typically respond within 48 hours.</p><!-- EDIT -->
+  </div>
+
+  <div class="contact-layout">
+
+    <!-- ============================================================
+         LEFT: intro + links
+         Edit your email, LinkedIn etc below
+         ============================================================ -->
+    <div class="contact-intro">
+      <p class="tagline">Let's make something <em>worth making.</em></p><!-- EDIT -->
+      <p class="intro-p">Whether you have a brief, a half-formed idea, or just want to talk design — I'd love to hear from you. Based in London, working globally.</p><!-- EDIT -->
+
+      <div class="contact-links">
+
+        <a href="mailto:hello@yourname.com" class="link-row"><!-- EDIT: your email -->
+          <span class="link-label">Email</span>
+          <span class="link-val">hello@yourname.com</span><!-- EDIT -->
+          <span class="link-arrow">↗</span>
+        </a>
+
+        <a href="https://linkedin.com/in/yourname" target="_blank" class="link-row"><!-- EDIT -->
+          <span class="link-label">LinkedIn</span>
+          <span class="link-val">linkedin.com/in/yourname</span><!-- EDIT -->
+          <span class="link-arrow">↗</span>
+        </a>
+
+        <a href="https://read.cv/yourname" target="_blank" class="link-row"><!-- EDIT -->
+          <span class="link-label">Read.cv</span>
+          <span class="link-val">read.cv/yourname</span><!-- EDIT -->
+          <span class="link-arrow">↗</span>
+        </a>
+
+        <a href="https://dribbble.com/yourname" target="_blank" class="link-row"><!-- EDIT -->
+          <span class="link-label">Dribbble</span>
+          <span class="link-val">dribbble.com/yourname</span><!-- EDIT -->
+          <span class="link-arrow">↗</span>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- ============================================================
+         RIGHT: contact form
+         To make it actually send emails (free):
+           1. Sign up at formspree.io
+           2. Create a new form — you'll get an ID like "xabcdefg"
+           3. Replace YOUR_FORM_ID below with that ID
+         ============================================================ -->
+    <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+      <div class="form-group">
+        <label class="form-label" for="name">Your name</label>
+        <input id="name" class="form-input" type="text" name="name" placeholder="Jane Smith" required />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="email">Email</label>
+        <input id="email" class="form-input" type="email" name="email" placeholder="jane@company.com" required />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="subject">Subject</label>
+        <input id="subject" class="form-input" type="text" name="subject" placeholder="Project enquiry" />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="message">Message</label>
+        <textarea id="message" class="form-input" name="message" placeholder="Tell me about your project..." required></textarea>
+      </div>
+
+      <button type="submit" class="form-submit">
+        Send message
+        <svg width="16" height="10" viewBox="0 0 16 10" fill="none">
+          <path d="M1 5h14M10 1l5 4-5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+    </form>
+
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2024 — Your Name</p><!-- EDIT -->
+  <p>Designed with intention</p>
+</footer>
+
+<style>
+  .contact-layout {
+    padding: 60px 64px 120px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: start;
+  }
+  .tagline {
+    font-family: var(--serif); font-size: 2.2rem; font-weight: 400;
+    line-height: 1.35; margin-bottom: 24px;
+  }
+  .tagline em { font-style: italic; color: var(--accent); }
+  .intro-p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.75; margin-bottom: 44px; }
+
+  .contact-links { display: flex; flex-direction: column; }
+  .link-row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 0; border-bottom: 1px solid var(--border);
+    transition: padding-left 0.3s var(--ease);
+  }
+  .link-row:hover { padding-left: 14px; }
+  .link-label {
+    font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--text-muted);
+  }
+  .link-val { font-family: var(--serif); font-size: 1.05rem; color: var(--text); }
+  .link-arrow { color: var(--accent); font-size: 1rem; }
+
+  /* Form */
+  .contact-form { display: flex; flex-direction: column; gap: 22px; }
+  .form-group { display: flex; flex-direction: column; gap: 8px; }
+  .form-label {
+    font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--text-muted);
+  }
+  .form-input {
+    background: var(--bg-2); border: 1px solid var(--border);
+    color: var(--text); font-family: var(--sans); font-size: 0.9rem;
+    font-weight: 300; padding: 14px 18px; outline: none; width: 100%;
+    transition: border-color 0.25s;
+  }
+  .form-input:focus { border-color: var(--accent); }
+  textarea.form-input { resize: vertical; min-height: 140px; }
+  .form-submit {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: var(--accent); color: var(--bg);
+    font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.12em;
+    text-transform: uppercase; padding: 17px 30px; border: none;
+    cursor: pointer; align-self: flex-start;
+    transition: background 0.3s var(--ease);
+  }
+  .form-submit:hover { background: var(--text); }
+  .form-submit svg { transition: transform 0.3s var(--ease); }
+  .form-submit:hover svg { transform: translateX(4px); }
+
+  @media (max-width: 768px) {
+    .contact-layout { grid-template-columns: 1fr; gap: 56px; padding: 40px 24px 80px; }
+  }
+</style>
+
+</body>
+</html>

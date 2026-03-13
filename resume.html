@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Résumé — Your Name</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">YN<span>.</span></a>
+  <div class="nav-links">
+    <a href="cases.html" class="nav-link">Case Studies</a>
+    <a href="resume.html" class="nav-link active">Résumé</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </div>
+</nav>
+
+<main>
+
+  <div class="page-hero">
+    <div class="page-label">Background</div>
+    <h1 class="page-title">Résumé</h1>
+    <p class="page-sub">Six years of product design across fintech, healthtech, and enterprise SaaS — from zero-to-one products to large-scale design systems.</p><!-- EDIT -->
+  </div>
+
+  <div class="resume-grid">
+
+    <!-- ============================
+         MAIN COLUMN
+         Edit: roles, dates, descriptions
+         To add a role: duplicate an .entry block
+         ============================ -->
+    <div class="resume-main">
+
+      <div class="resume-section">
+        <div class="section-label">Experience</div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <div class="entry-title">Senior Product Designer</div><!-- EDIT -->
+            <div class="entry-date">2022 — Present</div><!-- EDIT -->
+          </div>
+          <div class="entry-company">Company Name · London, UK</div><!-- EDIT -->
+          <p class="entry-desc">Led design across three core product areas. Shipped a redesigned onboarding flow that improved completion rates by 34%. Established design system foundations adopted by four engineering teams.</p><!-- EDIT -->
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <div class="entry-title">Product Designer</div><!-- EDIT -->
+            <div class="entry-date">2020 — 2022</div><!-- EDIT -->
+          </div>
+          <div class="entry-company">Agency Name · Remote</div><!-- EDIT -->
+          <p class="entry-desc">Designed end-to-end experiences for clients across healthcare and finance. Ran research, prototyping, and delivery with cross-functional teams in 2–4 week sprints.</p><!-- EDIT -->
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <div class="entry-title">Junior UI Designer</div><!-- EDIT -->
+            <div class="entry-date">2018 — 2020</div><!-- EDIT -->
+          </div>
+          <div class="entry-company">Studio Name · London, UK</div><!-- EDIT -->
+          <p class="entry-desc">Contributed to brand and digital design projects. Built component libraries and maintained design QA processes.</p><!-- EDIT -->
+        </div>
+      </div>
+
+      <div class="resume-section">
+        <div class="section-label">Education</div>
+        <div class="entry">
+          <div class="entry-head">
+            <div class="entry-title">BA Graphic Design</div><!-- EDIT -->
+            <div class="entry-date">2015 — 2018</div><!-- EDIT -->
+          </div>
+          <div class="entry-company">University Name</div><!-- EDIT -->
+          <p class="entry-desc">First-class honours. Dissertation on cognitive load theory applied to form design.</p><!-- EDIT -->
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ============================
+         SIDEBAR
+         Edit: skills, tools, awards
+         To add a skill: copy a <span class="chip"> line
+         ============================ -->
+    <div class="resume-sidebar">
+
+      <div class="resume-section">
+        <div class="section-label">Core skills</div>
+        <div class="chip-list">
+          <span class="chip">Product strategy</span><!-- EDIT -->
+          <span class="chip">UX research</span>
+          <span class="chip">Interaction design</span>
+          <span class="chip">Prototyping</span>
+          <span class="chip">Design systems</span>
+          <span class="chip">Accessibility</span>
+          <span class="chip">Data visualisation</span>
+          <span class="chip">User testing</span>
+          <span class="chip">Workshop facilitation</span>
+        </div>
+      </div>
+
+      <div class="resume-section">
+        <div class="section-label">Tools</div>
+        <div class="chip-list">
+          <span class="chip">Figma</span><!-- EDIT -->
+          <span class="chip">Maze</span>
+          <span class="chip">Hotjar</span>
+          <span class="chip">Miro</span>
+          <span class="chip">Notion</span>
+          <span class="chip">Linear</span>
+          <span class="chip">Framer</span>
+        </div>
+      </div>
+
+      <div class="resume-section">
+        <div class="section-label">Recognition</div>
+        <div class="entry">
+          <div class="entry-title" style="font-size:0.95rem">Awwwards SOTD</div><!-- EDIT -->
+          <div class="entry-date" style="margin-top:5px">2023</div><!-- EDIT -->
+        </div>
+        <div class="entry">
+          <div class="entry-title" style="font-size:0.95rem">Design Week Awards</div><!-- EDIT -->
+          <div class="entry-date" style="margin-top:5px">2022 — Shortlisted</div><!-- EDIT -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2024 — Your Name</p><!-- EDIT -->
+  <p>Designed with intention</p>
+</footer>
+
+<style>
+  .resume-grid {
+    padding: 60px 64px 120px;
+    display: grid; grid-template-columns: 1fr 290px; gap: 80px;
+  }
+  .resume-section { margin-bottom: 52px; }
+  .section-label {
+    font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--accent);
+    border-bottom: 1px solid var(--border); padding-bottom: 14px; margin-bottom: 28px;
+  }
+  .entry { padding: 22px 0; border-bottom: 1px solid var(--border); }
+  .entry:last-child { border-bottom: none; }
+  .entry-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
+  .entry-title { font-family: var(--serif); font-size: 1.1rem; font-weight: 700; }
+  .entry-date {
+    font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em;
+    color: var(--text-dim); text-transform: uppercase;
+  }
+  .entry-company { font-size: 0.85rem; color: var(--accent); margin-bottom: 10px; }
+  .entry-desc { font-size: 0.875rem; color: var(--text-muted); line-height: 1.7; }
+
+  .chip-list { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em;
+    text-transform: uppercase; border: 1px solid var(--border);
+    padding: 7px 13px; color: var(--text-muted);
+  }
+
+  @media (max-width: 768px) {
+    .resume-grid { grid-template-columns: 1fr; padding: 40px 24px 80px; }
+  }
+</style>
+
+</body>
+</html>

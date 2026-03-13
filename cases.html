@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Studies — Your Name</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">YN<span>.</span></a>
+  <div class="nav-links">
+    <a href="cases.html" class="nav-link active">Case Studies</a>
+    <a href="resume.html" class="nav-link">Résumé</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </div>
+</nav>
+
+<main>
+
+  <div class="page-hero">
+    <div class="page-label">Work</div>
+    <h1 class="page-title">Case Studies</h1>
+    <p class="page-sub">End-to-end design work spanning mobile apps, web products, and design systems — with the research and decisions that got there.</p>
+  </div>
+
+  <!-- ============================================================
+       CASE STUDY LIST
+       To add a new case study:
+         1. Duplicate one of the .case-row blocks below
+         2. Update the href, title, description and tags
+         3. Create a matching HTML file in the cases/ folder
+       ============================================================ -->
+  <div class="cases-list">
+
+    <a href="cases/fintech-onboarding.html" class="case-row">
+      <div class="row-num">01</div>
+      <div class="row-info">
+        <h3>Fintech Onboarding Redesign</h3><!-- EDIT -->
+        <p>Reducing drop-off through research-led design · 2024</p><!-- EDIT -->
+      </div>
+      <div class="row-tags">
+        <span class="tag">Mobile</span><!-- EDIT -->
+        <span class="tag">UX Research</span><!-- EDIT -->
+      </div>
+    </a>
+
+    <a href="cases/analytics-dashboard.html" class="case-row">
+      <div class="row-num">02</div>
+      <div class="row-info">
+        <h3>Enterprise Analytics Dashboard</h3><!-- EDIT -->
+        <p>Data visualisation for non-technical users · 2023</p><!-- EDIT -->
+      </div>
+      <div class="row-tags">
+        <span class="tag">Dashboard</span><!-- EDIT -->
+        <span class="tag">SaaS</span><!-- EDIT -->
+      </div>
+    </a>
+
+    <a href="cases/design-system.html" class="case-row">
+      <div class="row-num">03</div>
+      <div class="row-info">
+        <h3>Scalable Design System</h3><!-- EDIT -->
+        <p>Unifying four product teams under one component library · 2023</p><!-- EDIT -->
+      </div>
+      <div class="row-tags">
+        <span class="tag">Design System</span><!-- EDIT -->
+        <span class="tag">Systems</span><!-- EDIT -->
+      </div>
+    </a>
+
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2024 — Your Name</p><!-- EDIT -->
+  <p>Designed with intention</p>
+</footer>
+
+<style>
+  .cases-list { padding: 0 64px 120px; }
+
+  .case-row {
+    display: grid; grid-template-columns: 80px 1fr 220px;
+    align-items: center; gap: 40px;
+    padding: 36px 0; border-bottom: 1px solid var(--border);
+    transition: padding-left 0.35s var(--ease);
+    position: relative;
+  }
+  .case-row::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 2px; background: var(--accent);
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .case-row:hover { padding-left: 18px; }
+  .case-row:hover::before { opacity: 1; }
+
+  .row-num {
+    font-family: var(--mono); font-size: 0.65rem;
+    letter-spacing: 0.12em; color: var(--text-dim); text-transform: uppercase;
+  }
+  .row-info h3 {
+    font-family: var(--serif); font-size: 1.5rem; font-weight: 700; margin-bottom: 6px;
+  }
+  .row-info p { font-size: 0.85rem; color: var(--text-muted); }
+
+  .row-tags { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; }
+
+  @media (max-width: 768px) {
+    .cases-list { padding: 0 24px 80px; }
+    .case-row { grid-template-columns: 56px 1fr; }
+    .row-tags { display: none; }
+  }
+</style>
+
+</body>
+</html>

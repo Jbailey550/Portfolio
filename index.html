@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name — Product Designer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">YN<span>.</span></a>
+  <div class="nav-links">
+    <a href="cases.html" class="nav-link">Case Studies</a>
+    <a href="resume.html" class="nav-link">Résumé</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ============================================================
+       HERO SECTION
+       Edit: headline, sub-heading, your name/role
+       To add your photo: replace the .photo-placeholder div with:
+       <img src="images/your-photo.jpg" alt="Your Name" />
+       ============================================================ -->
+  <section class="hero">
+    <div class="hero-left">
+
+      <div class="hero-eyebrow">Product Designer</div><!-- EDIT: your role -->
+
+      <h1 class="hero-headline">
+        Designing with<br><em>intention,</em><br>built for people.
+      </h1><!-- EDIT: your headline -->
+
+      <p class="hero-sub">
+        I craft digital products that balance clarity with character —
+        turning complex problems into experiences that feel effortless.
+      </p><!-- EDIT: your one-liner -->
+
+      <a href="cases.html" class="cta-btn">
+        View my work
+        <svg width="16" height="10" viewBox="0 0 16 10" fill="none">
+          <path d="M1 5h14M10 1l5 4-5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+
+      <div class="scroll-hint">
+        <span class="scroll-line"></span>
+        Scroll to explore
+      </div>
+
+    </div>
+
+    <div class="hero-right">
+      <!-- EDIT: replace this block with your photo -->
+      <!-- <img src="images/photo.jpg" alt="Your Name" class="hero-photo" /> -->
+      <div class="photo-placeholder">
+        <div class="photo-silhouette">
+          <svg width="72" height="72" viewBox="0 0 80 80" fill="none" opacity="0.35">
+            <circle cx="40" cy="28" r="16" stroke="#c8b89a" stroke-width="1.5"/>
+            <path d="M8 72c0-17.7 14.3-32 32-32s32 14.3 32 32" stroke="#c8b89a" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="photo-label">Your photo here</span>
+        <div class="photo-tag">Portrait — 2024</div><!-- EDIT: year -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SELECTED WORK
+       Edit: add/remove .case-card blocks to match your projects
+       Update the href to point to your case study file
+       ============================================================ -->
+  <section class="work-section">
+    <div class="work-header">
+      <h2 class="work-title">Selected Work</h2>
+      <span class="work-count">03 Projects</span><!-- EDIT: update count -->
+    </div>
+
+    <div class="cases-grid">
+
+      <!-- FEATURED card — spans full width -->
+      <a href="cases/fintech-onboarding.html" class="case-card featured">
+        <div class="case-content">
+          <div class="case-num">01 — Featured</div>
+          <span class="tag">Mobile · UX Research</span><!-- EDIT: tags -->
+          <h3 class="case-title">Redesigning the onboarding experience for a fintech app</h3><!-- EDIT -->
+          <p class="case-desc">Reduced drop-off by 34% through intensive user research and iterative prototyping across a 3-month sprint.</p><!-- EDIT -->
+          <div class="case-arrow">
+            Read case study
+            <svg width="16" height="10" viewBox="0 0 16 10" fill="none">
+              <path d="M1 5h14M10 1l5 4-5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+        <div class="case-img"><div class="case-img-pattern"></div></div>
+      </a>
+
+      <!-- Regular card -->
+      <a href="cases/analytics-dashboard.html" class="case-card">
+        <div class="case-num">02</div>
+        <span class="tag">Dashboard · Data Viz</span><!-- EDIT -->
+        <h3 class="case-title">Analytics dashboard for enterprise SaaS</h3><!-- EDIT -->
+        <p class="case-desc">Making complex data legible and actionable for non-technical stakeholders.</p><!-- EDIT -->
+        <div class="case-arrow">
+          Read case study
+          <svg width="16" height="10" viewBox="0 0 16 10" fill="none">
+            <path d="M1 5h14M10 1l5 4-5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </a>
+
+      <!-- Regular card -->
+      <a href="cases/design-system.html" class="case-card">
+        <div class="case-num">03</div>
+        <span class="tag">Design System</span><!-- EDIT -->
+        <h3 class="case-title">Building a scalable design system from scratch</h3><!-- EDIT -->
+        <p class="case-desc">A unified component library adopted across 4 product teams in under 6 months.</p><!-- EDIT -->
+        <div class="case-arrow">
+          Read case study
+          <svg width="16" height="10" viewBox="0 0 16 10" fill="none">
+            <path d="M1 5h14M10 1l5 4-5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT STRIP
+       Edit: your about text and stats
+       ============================================================ -->
+  <div class="about-strip">
+    <div class="about-left">
+      <div class="about-label">About me</div>
+      <p class="about-text">
+        I'm a product designer who believes good design is <em>invisible</em> —
+        it just works. I bring together systems thinking, deep user empathy,
+        and a love of craft.
+      </p><!-- EDIT: your about blurb -->
+    </div>
+    <div class="about-right">
+      <div class="stats-grid">
+        <div class="stat">
+          <div class="stat-num">6+</div><!-- EDIT -->
+          <div class="stat-label">Years experience</div><!-- EDIT -->
+        </div>
+        <div class="stat">
+          <div class="stat-num">24</div><!-- EDIT -->
+          <div class="stat-label">Projects shipped</div><!-- EDIT -->
+        </div>
+        <div class="stat">
+          <div class="stat-num">12</div><!-- EDIT -->
+          <div class="stat-label">Happy clients</div><!-- EDIT -->
+        </div>
+        <div class="stat">
+          <div class="stat-num">3</div><!-- EDIT -->
+          <div class="stat-label">Design awards</div><!-- EDIT -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2024 — Your Name</p><!-- EDIT -->
+  <p>Designed with intention</p>
+</footer>
+
+<style>
+  /* ---- Hero ---- */
+  .hero {
+    min-height: 100vh;
+    display: grid; grid-template-columns: 1fr 1fr;
+    padding-top: 88px;
+  }
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 80px 48px 80px 64px; position: relative;
+  }
+  .hero-eyebrow {
+    font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 28px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .hero-eyebrow::before {
+    content: ''; flex-shrink: 0;
+    width: 28px; height: 1px; background: var(--accent);
+  }
+  .hero-headline {
+    font-family: var(--serif);
+    font-size: clamp(3rem, 5.5vw, 5.2rem);
+    font-weight: 700; line-height: 1.08; letter-spacing: -0.02em;
+    margin-bottom: 32px;
+  }
+  .hero-headline em { font-style: italic; color: var(--accent); }
+  .hero-sub {
+    font-size: 1.05rem; color: var(--text-muted);
+    max-width: 420px; line-height: 1.75; margin-bottom: 52px;
+  }
+  .cta-btn {
+    display: inline-flex; align-items: center; gap: 14px;
+    font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--text);
+    border: 1px solid var(--border); padding: 16px 28px;
+    transition: all 0.3s var(--ease); width: fit-content;
+  }
+  .cta-btn:hover {
+    border-color: var(--accent); color: var(--accent);
+    background: var(--accent-glow);
+  }
+  .cta-btn:hover svg { transform: translateX(5px); }
+  .cta-btn svg { transition: transform 0.3s var(--ease); }
+
+  .scroll-hint {
+    position: absolute; bottom: 36px; left: 64px;
+    display: flex; align-items: center; gap: 12px;
+    font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--text-dim);
+  }
+  .scroll-line {
+    width: 40px; height: 1px; background: var(--text-dim);
+    position: relative; overflow: hidden;
+  }
+  .scroll-line::after {
+    content: ''; position: absolute; left: -100%; top: 0;
+    width: 100%; height: 100%; background: var(--accent);
+    animation: scrollAnim 2s var(--ease) infinite;
+  }
+  @keyframes scrollAnim { 0%,100%{left:-100%} 50%{left:100%} }
+
+  /* Hero photo area */
+  .hero-right {
+    background: var(--bg-2);
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .photo-placeholder {
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 16px;
+    background: linear-gradient(160deg, #1c1a17 0%, #0f0f0f 100%);
+    position: relative;
+  }
+  .photo-placeholder::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 60% at 50% 40%, rgba(200,184,154,0.07) 0%, transparent 70%);
+  }
+  .photo-silhouette {
+    width: 220px; height: 320px;
+    background: linear-gradient(180deg, rgba(200,184,154,0.14) 0%, rgba(200,184,154,0.04) 100%);
+    border-radius: 110px 110px 0 0;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; z-index: 1;
+  }
+  .photo-label {
+    font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--text-dim); position: relative; z-index: 1;
+  }
+  .hero-photo {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+  .photo-tag {
+    position: absolute; top: 28px; right: 28px;
+    font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.1em;
+    color: var(--text-dim); text-transform: uppercase;
+    border: 1px solid var(--border); padding: 7px 13px;
+  }
+
+  /* ---- Work section ---- */
+  .work-section { padding: 120px 64px; }
+  .work-header {
+    display: flex; align-items: baseline; justify-content: space-between;
+    margin-bottom: 60px; border-bottom: 1px solid var(--border); padding-bottom: 22px;
+  }
+  .work-title { font-family: var(--serif); font-size: 2.4rem; font-weight: 400; }
+  .work-count {
+    font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--text-muted);
+  }
+
+  .cases-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+
+  .case-card {
+    background: var(--bg-2); position: relative; overflow: hidden;
+    padding: 48px; display: flex; flex-direction: column;
+    border: 1px solid var(--border); min-height: 360px;
+    transition: background 0.4s var(--ease);
+  }
+  .case-card::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(135deg, var(--accent-glow) 0%, transparent 60%);
+    opacity: 0; transition: opacity 0.4s; pointer-events: none;
+  }
+  .case-card:hover { background: var(--bg-3); }
+  .case-card:hover::after { opacity: 1; }
+  .case-card:hover .case-arrow { gap: 16px; }
+
+  .case-num {
+    font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.15em;
+    color: var(--text-dim); margin-bottom: 28px; text-transform: uppercase;
+  }
+  .case-card .tag { margin-bottom: 18px; }
+  .case-title {
+    font-family: var(--serif); font-size: 1.8rem; font-weight: 700;
+    line-height: 1.2; margin-bottom: 14px; flex: 1;
+  }
+  .case-desc {
+    font-size: 0.875rem; color: var(--text-muted); line-height: 1.7;
+    margin-bottom: 28px; max-width: 340px;
+  }
+  .case-arrow {
+    display: flex; align-items: center; gap: 10px;
+    font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--accent);
+    transition: gap 0.3s var(--ease);
+  }
+
+  /* Featured card */
+  .case-card.featured {
+    grid-column: 1 / -1;
+    flex-direction: row; align-items: flex-end; gap: 48px;
+  }
+  .case-card.featured .case-content { flex: 1; }
+  .case-card.featured .case-title { font-size: 2.5rem; max-width: 500px; }
+  .case-img {
+    width: 360px; height: 280px; flex-shrink: 0;
+    background: var(--bg-3); overflow: hidden;
+  }
+  .case-img-pattern {
+    width: 100%; height: 100%;
+    background: repeating-linear-gradient(
+      45deg, transparent, transparent 20px,
+      rgba(255,255,255,0.015) 20px, rgba(255,255,255,0.015) 21px
+    );
+  }
+
+  /* ---- About strip ---- */
+  .about-strip {
+    display: grid; grid-template-columns: 1fr 1fr;
+    border-top: 1px solid var(--border);
+  }
+  .about-left {
+    padding: 80px 64px; border-right: 1px solid var(--border);
+  }
+  .about-right { padding: 80px 64px; }
+  .about-label {
+    font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 24px;
+  }
+  .about-text {
+    font-family: var(--serif); font-size: 1.5rem; font-weight: 400; line-height: 1.6;
+  }
+  .about-text em { font-style: italic; color: var(--accent); }
+
+  .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; }
+  .stat-num {
+    font-family: var(--serif); font-size: 3rem; font-weight: 700; line-height: 1;
+  }
+  .stat-label {
+    font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--text-muted); margin-top: 8px;
+  }
+
+  /* ---- Responsive ---- */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 100px 24px 60px; }
+    .hero-right { min-height: 380px; }
+    .scroll-hint { left: 24px; }
+    .work-section { padding: 80px 24px; }
+    .cases-grid { grid-template-columns: 1fr; }
+    .case-card.featured { flex-direction: column; }
+    .case-img { width: 100%; height: 200px; }
+    .about-strip { grid-template-columns: 1fr; }
+    .about-left { border-right: none; border-bottom: 1px solid var(--border); padding: 60px 24px; }
+    .about-right { padding: 60px 24px; }
+  }
+</style>
+
+</body>
+</html>
