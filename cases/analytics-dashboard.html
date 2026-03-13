@@ -30,11 +30,6 @@
         </svg>
         All case studies
       </a>
-      <div class="tag-row">
-        <span class="tag">Dashboard</span><!-- EDIT -->
-        <span class="tag">SaaS</span><!-- EDIT -->
-        <span class="tag">Data Viz</span><!-- EDIT -->
-      </div>
       <h1 class="study-title">Enterprise Analytics Dashboard</h1><!-- EDIT -->
       <p class="study-desc">Designing data-dense interfaces that non-technical stakeholders could navigate confidently — without dumbing down the underlying complexity.</p><!-- EDIT -->
     </div>
@@ -52,6 +47,7 @@
   </div>
 
   <article class="study-body">
+  <div class="study-body-layout">
   <div class="study-body-inner">
 
     <h2>The Challenge</h2>
@@ -81,6 +77,16 @@
     <!-- Section image — replace with: <img src="../images/your-image.jpg" alt="description" class="body-img" /> -->
     <div class="section-img-ph"><span>Image — drop your asset here</span></div>
 
+  </div>
+    <aside class="quick-links">
+      <div class="quick-links-label">On this page</div>
+      <nav class="quick-links-list">
+        <a href="#brief" class="quick-link-item">The Brief</a>
+        <a href="#discovery" class="quick-link-item">Research & Discovery</a>
+        <a href="#process" class="quick-link-item">Design Process</a>
+        <a href="#result" class="quick-link-item">Result</a>
+      </nav>
+    </aside>
   </div>
   </article>
 
@@ -151,5 +157,34 @@
   @media (max-width: 768px) { .study-hero { grid-template-columns: 1fr; padding: 110px 24px 56px; gap: 40px; } .study-cover { margin: 0 24px; height: 280px; } .study-body { padding: 56px 24px; } .next-case { padding: 0 24px 60px; } }
 </style>
 
+
+<script>
+  // Smooth scroll for quick links
+  document.querySelectorAll('.quick-link-item').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        const offset = 96;
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // Highlight active section in quick links as user scrolls
+  const sections = document.querySelectorAll('.study-body-inner h2[id]');
+  const links = document.querySelectorAll('.quick-link-item');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector(`.quick-link-item[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  sections.forEach(s => obs.observe(s));
+</script>
 </body>
 </html>

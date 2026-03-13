@@ -30,10 +30,6 @@
         </svg>
         All case studies
       </a>
-      <div class="tag-row">
-        <span class="tag">Design System</span><!-- EDIT -->
-        <span class="tag">Systems Thinking</span><!-- EDIT -->
-      </div>
       <h1 class="study-title">Building a Scalable Design System from Scratch</h1><!-- EDIT -->
       <p class="study-desc">A unified component library and documentation system adopted across four product teams within six months of launch.</p><!-- EDIT -->
     </div>
@@ -51,13 +47,14 @@
   </div>
 
   <article class="study-body">
+  <div class="study-body-layout">
   <div class="study-body-inner">
 
     <h2>Why It Was Needed</h2>
     <p>Four product teams. Four different button styles. Three typeface scales. No shared language. The company had scaled fast and design debt had compounded silently for two years.</p>
     <p>Every new feature required renegotiating solved problems. Engineers built the same component multiple times. QA found inconsistencies weekly.</p>
 
-    <h2>Approach</h2>
+    <h2 id="approach">Approach</h2>
     <p>Design systems fail when they're built in isolation and handed over. I made a deliberate choice to treat this as an <strong>infrastructure project</strong>, not a design deliverable — which meant engineers were co-owners from day one.</p>
 
     <blockquote>
@@ -74,13 +71,23 @@
       <li>Adoption roadmap that migrated each product team gradually, not all at once</li>
     </ul>
 
-    <h2>Impact</h2>
+    <h2 id="impact">Impact</h2>
     <p>Within six months, all four product teams had migrated their active workflows to the system. New feature design time dropped by an estimated 30%. Design-to-dev handoff issues fell significantly in quarterly retros.</p>
 
 
     <!-- Section image — replace with: <img src="../images/your-image.jpg" alt="description" class="body-img" /> -->
     <div class="section-img-ph"><span>Image — drop your asset here</span></div>
 
+  </div>
+    <aside class="quick-links">
+      <div class="quick-links-label">On this page</div>
+      <nav class="quick-links-list">
+        <a href="#challenge" class="quick-link-item">The Challenge</a>
+        <a href="#approach" class="quick-link-item">Approach</a>
+        <a href="#building" class="quick-link-item">Building the System</a>
+        <a href="#impact" class="quick-link-item">Impact</a>
+      </nav>
+    </aside>
   </div>
   </article>
 
@@ -151,5 +158,34 @@
   @media (max-width: 768px) { .study-hero { grid-template-columns: 1fr; padding: 110px 24px 56px; gap: 40px; } .study-cover { margin: 0 24px; height: 280px; } .study-body { padding: 56px 24px; } .next-case { padding: 0 24px 60px; } }
 </style>
 
+
+<script>
+  // Smooth scroll for quick links
+  document.querySelectorAll('.quick-link-item').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        const offset = 96;
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // Highlight active section in quick links as user scrolls
+  const sections = document.querySelectorAll('.study-body-inner h2[id]');
+  const links = document.querySelectorAll('.quick-link-item');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector(`.quick-link-item[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  sections.forEach(s => obs.observe(s));
+</script>
 </body>
 </html>

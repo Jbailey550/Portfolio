@@ -36,11 +36,6 @@
         All case studies
       </a>
 
-      <div class="tag-row">
-        <span class="tag">Mobile</span><!-- EDIT: tags -->
-        <span class="tag">UX Research</span><!-- EDIT -->
-      </div>
-
       <h1 class="study-title">Redesigning the Fintech Onboarding Experience</h1><!-- EDIT -->
       <p class="study-desc">A 3-month research-led redesign that reduced onboarding drop-off by 34% and improved activation rates for a leading UK fintech app.</p><!-- EDIT -->
 
@@ -100,9 +95,10 @@
          <img src="../images/your-image.jpg" alt="description" class="body-img wide" />
        ============================================================ -->
   <article class="study-body">
+  <div class="study-body-layout">
   <div class="study-body-inner">
 
-    <h2>The Problem</h2>
+    <h2 id="problem">The Problem</h2>
     <p>When I joined the project, the onboarding completion rate sat at 52%. Users were dropping off at the identity verification step — a critical but friction-heavy moment in the flow. The existing design had evolved through patches rather than intention, and it showed.</p>
     <p>The brief was deceptively simple: make it better. The real challenge was understanding why "better" meant different things to compliance, growth, and the end user simultaneously.</p>
 
@@ -114,7 +110,7 @@
     <!-- Section image — replace with: <img src="../images/your-image.jpg" alt="description" class="body-img" /> -->
     <div class="section-img-ph"><span>Image — drop your asset here</span></div>
 
-    <h2>Discovery & Research</h2>
+    <h2 id="discovery">Discovery & Research</h2>
     <p>I ran 18 moderated usability sessions, analysed 3 months of session recordings, and mapped exit points against support ticket themes. Three core pain points emerged consistently:</p>
     <ul>
       <li><strong>Unclear progress signalling</strong> — users didn't know how far through the flow they were</li>
@@ -129,7 +125,7 @@
     <!-- Section image — replace with: <img src="../images/your-image.jpg" alt="description" class="body-img" /> -->
     <div class="section-img-ph"><span>Image — drop your asset here</span></div>
 
-    <h2>Design Approach</h2>
+    <h2 id="approach">Design Approach</h2>
     <p>Rather than redesigning in isolation, I embedded with the compliance and growth teams to understand the non-negotiables and find the real latitude for design. The ID verification step needed to stay — but how we framed it, timed it, and communicated it was entirely up for rethinking.</p>
     <p>After three rounds of low-fidelity prototyping and concept testing, we landed on a <strong>progressive disclosure model</strong>: surface only what's needed at each step, with persistent clarity about what's coming.</p>
 
@@ -140,7 +136,7 @@
     <!-- Section image — replace with: <img src="../images/your-image.jpg" alt="description" class="body-img" /> -->
     <div class="section-img-ph"><span>Image — drop your asset here</span></div>
 
-    <h2>Outcome</h2>
+    <h2 id="outcome">Outcome</h2>
     <p>After launch, onboarding completion improved to <strong>86%</strong> — a 34% lift. Verification-step drop-off fell by 51%. Support tickets relating to the onboarding flow dropped by 40% in the first month.</p>
     <p>More importantly, qualitative feedback shifted: users described the process as "surprisingly easy" and "actually explained well" — a signal that the tone and framing changes had landed.</p>
 
@@ -148,6 +144,16 @@
     <!-- Section image — replace with: <img src="../images/your-image.jpg" alt="description" class="body-img" /> -->
     <div class="section-img-ph"><span>Image — drop your asset here</span></div>
 
+  </div>
+    <aside class="quick-links">
+      <div class="quick-links-label">On this page</div>
+      <nav class="quick-links-list">
+        <a href="#problem" class="quick-link-item">The Problem</a>
+        <a href="#discovery" class="quick-link-item">Discovery & Research</a>
+        <a href="#approach" class="quick-link-item">Design Approach</a>
+        <a href="#outcome" class="quick-link-item">Outcome</a>
+      </nav>
+    </aside>
   </div>
   </article>
 
@@ -214,13 +220,13 @@
   }
   .bullet-text { font-size: 0.85rem; color: var(--text); line-height: 1.5; }
 
-  /* Cover */
+  /* Cover — full width up to 1920px, no side padding */
   .study-cover {
-    margin: 0 auto;
-    padding: 0 64px;
+    width: 100%;
     max-width: 1920px;
+    margin: 0 auto;
     height: 500px;
-    background: var(--bg-2); border: 1px solid var(--border);
+    background: var(--bg-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
     display: flex; align-items: center; justify-content: center; overflow: hidden;
   }
   .cover-img { width: 100%; height: 100%; object-fit: cover; }
@@ -230,9 +236,32 @@
     border: 1px solid var(--border); padding: 16px 28px;
   }
 
-  /* Body */
-  .study-body { padding: 80px 64px; }
-  .study-body-inner { max-width: 760px; }
+  /* Body — two column: content + quick links */
+  .study-body { padding: 80px 64px; max-width: 1920px; margin: 0 auto; }
+  .study-body-layout { display: grid; grid-template-columns: 1fr 220px; gap: 80px; align-items: start; }
+  .study-body-inner { max-width: 720px; }
+
+  /* Quick links sidebar */
+  .quick-links { position: sticky; top: 88px; }
+  .quick-links-label {
+    font-family: var(--mono); font-size: 0.56rem; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 16px; display: flex; align-items: center; gap: 10px;
+  }
+  .quick-links-label::after { content: ''; flex: 1; height: 1px; background: rgba(200,184,154,0.3); }
+  .quick-links-list { display: flex; flex-direction: column; }
+  .quick-link-item {
+    font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--text-muted);
+    padding: 11px 0; border-bottom: 1px solid var(--border);
+    transition: color 0.2s; display: flex; align-items: center; gap: 8px;
+  }
+  .quick-link-item:last-child { border-bottom: none; }
+  .quick-link-item::before { content: ''; width: 3px; height: 3px; border-radius: 50%; background: var(--pop); flex-shrink: 0; opacity: 0; transition: opacity 0.2s; }
+  .quick-link-item:hover { color: var(--text); }
+  .quick-link-item:hover::before { opacity: 1; }
+  .quick-link-item.active { color: var(--text); }
+  .quick-link-item.active::before { opacity: 1; }
   .study-body h2 {
     font-family: var(--serif); font-size: 1.75rem; font-weight: 700;
     margin-bottom: 22px; padding-top: 52px; color: var(--text);
@@ -295,13 +324,44 @@
 
   @media (max-width: 768px) {
     .study-hero-wrap { border-bottom: 1px solid var(--border); }
-  .study-hero { grid-template-columns: 1fr; padding: 110px 24px 56px; gap: 40px; }
-    .study-cover { margin: 0 24px; height: 280px; }
-    .study-body { padding: 56px 24px; }
+    .study-hero { grid-template-columns: 1fr; padding: 110px 24px 56px; gap: 40px; }
+    .study-cover { height: 240px; }
+    .study-body { padding: 40px 24px; }
+    .study-body-layout { grid-template-columns: 1fr; gap: 0; }
+    .quick-links { position: static; margin-bottom: 48px; order: -1; }
     .body-img.wide { width: calc(100% + 48px); margin-left: -24px; }
     .next-case { padding: 0 24px 60px; }
   }
 </style>
 
+
+<script>
+  // Smooth scroll for quick links
+  document.querySelectorAll('.quick-link-item').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        const offset = 96;
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // Highlight active section in quick links as user scrolls
+  const sections = document.querySelectorAll('.study-body-inner h2[id]');
+  const links = document.querySelectorAll('.quick-link-item');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector(`.quick-link-item[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  sections.forEach(s => obs.observe(s));
+</script>
 </body>
 </html>
