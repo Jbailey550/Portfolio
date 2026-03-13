@@ -119,6 +119,7 @@
 <style>
   .contact-layout {
     padding: 60px 64px 120px;
+    max-width: 1920px; margin: 0 auto;
     display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: start;
   }
   .tagline {
@@ -140,7 +141,7 @@
     text-transform: uppercase; color: var(--text-muted);
   }
   .link-val { font-family: var(--serif); font-size: 1.05rem; color: var(--text); }
-  .link-arrow { color: var(--accent); font-size: 1rem; }
+  .link-arrow { color: var(--pop); font-size: 1rem; }
 
   /* Form */
   .contact-form { display: flex; flex-direction: column; gap: 22px; }
@@ -155,11 +156,11 @@
     font-weight: 300; padding: 14px 18px; outline: none; width: 100%;
     transition: border-color 0.25s;
   }
-  .form-input:focus { border-color: var(--accent); }
+  .form-input:focus { border-color: var(--pop); }
   textarea.form-input { resize: vertical; min-height: 140px; }
   .form-submit {
     display: inline-flex; align-items: center; gap: 12px;
-    background: var(--accent); color: var(--bg);
+    background: var(--pop); color: var(--bg);
     font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.12em;
     text-transform: uppercase; padding: 17px 30px; border: none;
     cursor: pointer; align-self: flex-start;

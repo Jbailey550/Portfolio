@@ -85,7 +85,7 @@
 </footer>
 
 <style>
-  .cases-list { padding: 0 64px 120px; }
+  .cases-list { padding: 0 64px 120px; max-width: 1920px; margin: 0 auto; }
 
   .case-row {
     display: grid; grid-template-columns: 80px 1fr 220px;
@@ -96,7 +96,7 @@
   }
   .case-row::before {
     content: ''; position: absolute; left: 0; top: 0; bottom: 0;
-    width: 2px; background: var(--accent);
+    width: 2px; background: var(--pop);
     opacity: 0; transition: opacity 0.3s;
   }
   .case-row:hover { padding-left: 18px; }
