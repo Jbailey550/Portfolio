@@ -21,6 +21,7 @@
 </nav>
 
 <main>
+  <!-- CONTENT START
 
   <div class="page-hero-wrap">
   <div class="page-hero">
@@ -133,13 +134,17 @@
 
     </div>
   </div>
+  CONTENT END -->
 
+  <div class="coming-soon-wrap">
+    <p class="coming-soon-label">Coming soon</p>
+    <p class="coming-soon-sub">This page is currently being updated.</p>
+  </div>
 </main>
 
 <footer>
   <div class="footer-inner">
-  <p>© 2024 — Your Name</p><!-- EDIT -->
-  <p>Designed with intention</p>
+  <p>© 2026 — John Bailey</p>
   </div>
 </footer>
 
@@ -176,6 +181,9 @@
   @media (max-width: 768px) {
     .resume-grid { grid-template-columns: 1fr; padding: 40px 24px 80px; }
   }
+  .coming-soon-wrap { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 60vh; gap: 12px; }
+  .coming-soon-label { font-family: var(--serif); font-size: 2rem; font-weight: 700; color: var(--text); }
+  .coming-soon-sub { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); }
 </style>
 
 </body>
