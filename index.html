@@ -186,34 +186,11 @@
        ============================================================ -->
   <div class="about-strip">
     <div class="about-inner">
-      <div class="about-left">
+      <div class="about-full">
         <div class="about-label">About me</div>
         <p class="about-text">
-        
-
-Design leader with over 20 years’ experience driving digital transformation within complex, high-stakes environments. Proven track record in scaling and building high performing multidisciplinary teams across design, research, and data, with a focus on building scalable design infrastructure (Design Systems) that balance technical feasibility with accessibility standards (WCAG 2.2).
-
-        </p><!-- EDIT -->
-      </div>
-      <div class="about-right">
-        <div class="stats-grid">
-          <div class="stat">
-            <div class="stat-num">6+</div><!-- EDIT -->
-            <div class="stat-label">Years experience</div><!-- EDIT -->
-          </div>
-          <div class="stat">
-            <div class="stat-num">24</div><!-- EDIT -->
-            <div class="stat-label">Projects shipped</div><!-- EDIT -->
-          </div>
-          <div class="stat">
-            <div class="stat-num">12</div><!-- EDIT -->
-            <div class="stat-label">Happy clients</div><!-- EDIT -->
-          </div>
-          <div class="stat">
-            <div class="stat-num">3</div><!-- EDIT -->
-            <div class="stat-label">Design awards</div><!-- EDIT -->
-          </div>
-        </div>
+          Design leader with over 20 years’ experience driving digital transformation within complex, high-stakes environments. Proven track record in scaling and building high-performing multidisciplinary teams across design, research, and data, with a focus on building scalable design infrastructure (Design Systems) that balance technical feasibility with accessibility standards (WCAG 2.2).
+        </p>
       </div>
     </div>
   </div>
@@ -354,15 +331,11 @@ Design leader with over 20 years’ experience driving digital transformation wi
 
   /* ---- About strip ---- */
   .about-strip { border-top: 1px solid var(--border); }
-  .about-inner { max-width: 1920px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; }
-  .about-left { padding: 80px 64px; border-right: 1px solid var(--border); }
-  .about-right { padding: 80px 64px; }
+  .about-inner { max-width: 1920px; margin: 0 auto; }
+  .about-full { padding: 80px 64px; }
   .about-label { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 24px; }
-  .about-text { font-family: var(--serif); font-size: 1.5rem; font-weight: 400; line-height: 1.6; }
+  .about-text { font-family: var(--serif); font-size: 1.5rem; font-weight: 400; line-height: 1.6; max-width: 860px; }
   .about-text em { font-style: italic; color: var(--accent); }
-  .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; }
-  .stat-num { font-family: var(--serif); font-size: 3rem; font-weight: 700; line-height: 1; }
-  .stat-label { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-top: 8px; }
 
   /* ---- Responsive ---- */
   @media (max-width: 1280px) {
@@ -376,9 +349,7 @@ Design leader with over 20 years’ experience driving digital transformation wi
     .work-section { padding: 80px 0; }
     .work-inner { padding: 0 24px; }
     .cases-grid { grid-template-columns: 1fr; }
-    .about-inner { grid-template-columns: 1fr; }
-    .about-left { border-right: none; border-bottom: 1px solid var(--border); padding: 60px 24px; }
-    .about-right { padding: 60px 24px; }
+    .about-full { padding: 60px 24px; }
   }
 </style>
 
