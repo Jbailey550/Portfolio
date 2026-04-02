@@ -14,7 +14,7 @@
   --border:      rgba(255,255,255,0.08);
   --text:        #f0ede8;
   --text-muted:  rgba(240,237,232,0.55);  /* was 0.45 — lifted to 4.7:1 to pass WCAG AA */
-  --text-dim:    rgba(240,237,232,0.40);  /* was 0.25 — lifted to 3.3:1 (decorative/large text) */
+  --text-dim:    rgba(240,237,232,0.55);  /* lifted to 0.55 — passes WCAG AA 4.5:1 */
   --muted:       rgba(240,237,232,0.55);  /* alias */
   --dim:         rgba(240,237,232,0.40);  /* alias */
   --accent:      #c8b89a;
