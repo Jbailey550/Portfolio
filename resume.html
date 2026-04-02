@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Résumé — John Bailey</title>
+  <title>Résumé — Your Name</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -191,6 +191,7 @@
     max-width: 1920px; margin: 0 auto;
     display: grid; grid-template-columns: 1fr 290px; gap: 80px;
   }
+  .resume-main { max-width: 900px; }
   .resume-section { margin-bottom: 52px; }
   .section-label {
     font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.18em;
@@ -208,11 +209,11 @@
   .entry-company { font-size: 0.85rem; color: var(--accent); margin-bottom: 10px; }
   .entry-desc { font-size: 0.875rem; color: var(--text-muted); line-height: 1.7; }
 
-  .chip-list { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip-list { display: flex; flex-wrap: wrap; gap: 6px 0; }
   .chip {
     font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.1em;
-    text-transform: uppercase; border: 1px solid var(--border);
-    padding: 7px 13px; color: #ffffff;
+    text-transform: uppercase; border: none;
+    padding: 4px 0; color: #ffffff;
   }
 
   @media (max-width: 768px) {
