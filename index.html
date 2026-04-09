@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>John Bailey — Lead product designer</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -216,7 +216,7 @@
 
 <style>
   /* ---- Hero ---- */
-  .hero { min-height: 100vh; padding-top: 88px; }
+  .hero { min-height: 100vh; padding-top: calc(88px + env(safe-area-inset-top, 0px)); }
   .hero-inner {
     max-width: 1920px; margin: 0 auto;
     display: grid; grid-template-columns: 1fr 1fr;
