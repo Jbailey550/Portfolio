@@ -15,32 +15,34 @@
       <span></span><span></span><span></span>
     </button>
     <div class="nav-links">
-      <a href="cases.html" class="nav-link">Case Studies</a>
-      <a href="resume.html" class="nav-link">Résumé</a>
-      <a href="experiments.html" class="nav-link">Experiments</a>
-      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="cases.html" class="nav-link ">Case Studies</a>
+      <a href="resume.html" class="nav-link ">Résumé</a>
+      <a href="experiments.html" class="nav-link ">Experiments</a>
+      <a href="contact.html" class="nav-link ">Contact</a>
     </div>
   </div>
 </nav>
 
 <script>
-  const toggle = document.querySelector('.nav-toggle');
-  const links  = document.querySelector('.nav-links');
-  toggle.addEventListener('click', () => {
-    const open = links.classList.toggle('open');
+(function(){
+  var toggle = document.querySelector('.nav-toggle');
+  var links  = document.querySelector('.nav-links');
+  if (!toggle) return;
+  toggle.addEventListener('click', function() {
+    var open = links.classList.toggle('open');
     toggle.classList.toggle('open', open);
     toggle.setAttribute('aria-expanded', open);
     document.body.style.overflow = open ? 'hidden' : '';
   });
-  // Close menu when a link is clicked
-  links.querySelectorAll('.nav-link').forEach(l =>
-    l.addEventListener('click', () => {
+  links.querySelectorAll('.nav-link').forEach(function(l) {
+    l.addEventListener('click', function() {
       links.classList.remove('open');
       toggle.classList.remove('open');
-      toggle.setAttribute('aria-expanded', false);
+      toggle.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
-    })
-  );
+    });
+  });
+})();
 </script>
 
 <main>

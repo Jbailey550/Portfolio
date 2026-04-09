@@ -71,8 +71,17 @@ nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   background: #0d0d0d;
   border-bottom: 1px solid var(--border);
-  /* Fill the iOS safe area (notch / Dynamic Island) so no gap appears above the nav */
+  /*
+   * iOS safe-area fix: viewport-fit=cover lets us paint behind the notch /
+   * Dynamic Island. padding-top fills that strip with the nav background.
+   * transform:translateZ(0) forces the nav onto its own GPU compositing layer
+   * which stops iOS Safari dropping it during momentum scroll.
+   */
   padding-top: env(safe-area-inset-top, 0px);
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 .nav-inner {
   max-width: 1920px; margin: 0 auto;
@@ -117,7 +126,8 @@ footer p {
   border-bottom: 1px solid var(--border);
 }
 .page-hero {
-  padding: 160px 64px 80px;
+  /* 160px clears the nav on desktop; env() adds notch height on iPhone */
+  padding: calc(160px + env(safe-area-inset-top, 0px)) 64px 80px;
   max-width: 1920px; margin: 0 auto;
 }
 .page-label {
@@ -146,7 +156,7 @@ footer p {
   .nav-inner { padding: 18px 20px; }
   .nav-links { gap: 20px; }
   .footer-inner { padding: 24px; flex-direction: column; gap: 10px; text-align: center; }
-  .page-hero { padding: 110px 24px 60px; }
+  .page-hero { padding: calc(110px + env(safe-area-inset-top, 0px)) 24px 60px; }
 }
 
 /* ---- MOBILE NAV (hamburger) ---- */
@@ -192,5 +202,5 @@ footer p {
   .nav-link { font-size: 1rem; letter-spacing: 0.12em; }
 
   .footer-inner { padding: 20px; flex-direction: column; gap: 10px; text-align: center; }
-  .page-hero { padding: 100px 20px 48px; }
+  .page-hero { padding: calc(100px + env(safe-area-inset-top, 0px)) 20px 48px; }
 }
