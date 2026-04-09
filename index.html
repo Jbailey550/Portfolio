@@ -11,6 +11,9 @@
 <nav>
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">John Bailey<span>.</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
     <div class="nav-links">
       <a href="cases.html" class="nav-link">Case Studies</a>
       <a href="resume.html" class="nav-link">Résumé</a>
@@ -19,6 +22,26 @@
     </div>
   </div>
 </nav>
+
+<script>
+  const toggle = document.querySelector('.nav-toggle');
+  const links  = document.querySelector('.nav-links');
+  toggle.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    toggle.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  // Close menu when a link is clicked
+  links.querySelectorAll('.nav-link').forEach(l =>
+    l.addEventListener('click', () => {
+      links.classList.remove('open');
+      toggle.classList.remove('open');
+      toggle.setAttribute('aria-expanded', false);
+      document.body.style.overflow = '';
+    })
+  );
+</script>
 
 <main>
 
@@ -213,7 +236,7 @@
     font-family: var(--serif); font-size: clamp(2.4rem, 4vw, 4rem);
     font-weight: 700; line-height: 1.08; letter-spacing: -0.02em; margin-bottom: 32px;
   }
-  .hero-headline em { font-style: italic; color: var(--accent); white-space: nowrap; }
+  .hero-headline em { font-style: italic; color: var(--accent); }
   .hero-sub { font-size: 1.05rem; color: #f0ede8;; max-width: 500px; line-height: 1.75; margin-bottom: 52px; }
   .cta-btn {
     display: inline-flex; align-items: center; gap: 14px;
@@ -337,6 +360,17 @@
     .work-inner { padding: 0 24px; }
     .cases-grid { grid-template-columns: 1fr; }
     .about-full { padding: 60px 24px; }
+  }
+  @media (max-width: 640px) {
+    .hero { padding-top: 68px; }
+    .hero-left { padding: 40px 20px 48px; }
+    .hero-headline { font-size: clamp(2rem, 8vw, 2.8rem); }
+    .hero-right { min-height: 280px; }
+    .scroll-hint { display: none; }
+    .work-inner { padding: 0 20px; }
+    .card-body { padding: 20px 20px 24px; }
+    .about-full { padding: 48px 20px; }
+    .about-text { font-size: 1.2rem; }
   }
 </style>
 
