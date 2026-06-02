@@ -24,24 +24,44 @@
 </nav>
 
 <script>
-(function(){
+(function () {
+  /* ── Hamburger toggle ── */
   var toggle = document.querySelector('.nav-toggle');
   var links  = document.querySelector('.nav-links');
-  if (!toggle) return;
-  toggle.addEventListener('click', function() {
-    var open = links.classList.toggle('open');
-    toggle.classList.toggle('open', open);
-    toggle.setAttribute('aria-expanded', open);
-    document.body.style.overflow = open ? 'hidden' : '';
-  });
-  links.querySelectorAll('.nav-link').forEach(function(l) {
-    l.addEventListener('click', function() {
-      links.classList.remove('open');
-      toggle.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
+  if (toggle) {
+    toggle.addEventListener('click', function () {
+      var open = links.classList.toggle('open');
+      toggle.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+      document.body.style.overflow = open ? 'hidden' : '';
     });
-  });
+    links.querySelectorAll('.nav-link').forEach(function (l) {
+      l.addEventListener('click', function () {
+        links.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+
+  /*
+   * ── Nav-height sync ──────────────────────────────────────────────────────
+   * Reads the nav's actual rendered height (which already includes
+   * env(safe-area-inset-top) because the nav has padding-top for it).
+   * Writes that value into --nav-height on :root so body padding-top
+   * always matches exactly, on every device and orientation.
+   */
+  function syncNavHeight() {
+    var h = document.querySelector('nav').offsetHeight;
+    document.documentElement.style.setProperty('--nav-height', h + 'px');
+  }
+  syncNavHeight();
+  window.addEventListener('resize', syncNavHeight);
+  /* Re-sync after fonts load — web fonts can change the logo height */
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(syncNavHeight);
+  }
 })();
 </script>
 
