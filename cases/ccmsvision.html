@@ -98,10 +98,25 @@
     <div class="study-body-col">
 
       <h2 id="outcome">Outcome</h2>
-      <p><strong>Securing a £1m+ investment in a new CCMS platform through proof of concept</strong><br>Led and de-risked the transformation of NICE's publishing and clinical guidance model to deliver the UX proof-of-concept required to secure £1M+ in funding for a new CCMS.</p>
-      <p><strong>12% improvement in task completion</strong><br>Achieved a 12% uplift in successful task completion by redesigning end-to-end clinical journeys. By aligning complex medical evidence with real-world decision-making workflows.</p>
-      <p><strong>23% reduction in average time-to-answer</strong><br>Reduced average 'time-to-answer' by 23% across core user journeys, through optimisation of the end to end content funnel.</p>
 
+    </div>
+
+    <div class="outcome-cards">
+      <div class="outcome-card">
+        <div class="outcome-num">£1m+</div>
+        <div class="outcome-headline">Investment secured</div>
+        <div class="outcome-body">Led and de-risked the transformation of NICE's publishing model to deliver the UX proof-of-concept required to secure funding for a new CCMS.</div>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-num">12%</div>
+        <div class="outcome-headline">Improvement in task completion</div>
+        <div class="outcome-body">Achieved by redesigning end-to-end clinical journeys, aligning complex medical evidence with real-world decision-making workflows.</div>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-num">23%</div>
+        <div class="outcome-headline">Reduction in time-to-answer</div>
+        <div class="outcome-body">Reduced across core user journeys through optimisation of the end-to-end content funnel.</div>
+      </div>
     </div>
 
     <div class="study-body-col">
@@ -142,20 +157,11 @@
         <li>Reframed assumptions into measurable hypotheses, using prototypes to stress-test assumptions and safely de-risk the transformation of NICE's core publishing model.</li>
       </ul>
 
-      <h3 class="body-subheading">Recommendation card - Iteration 1</h3>
+      <h3 class="body-subheading">Recommendation card - Decisions and iteration 1</h3>
        <p>NICE Guidance is authored as static Word documents and published as fragmented HTML. This "document-first" approach resulted in poor discoverability and excessive time-on-task in high-pressure clinical environments.</p>
 
     </div>
     <div class="body-img-ph">
-      <img src="Reccard1.png" alt="Before — existing NICE guidance interface">
-    </div>
-
- <div class="study-body-col">
- <h3 class="body-subheading">Recommendation card - Iteration 2 and Feedback</h3>
-       <p>NICE Guidance is authored as static Word documents and published as fragmented HTML. This "document-first" approach resulted in poor discoverability and excessive time-on-task in high-pressure clinical environments.</p>
-
-</div>
-   <div class="body-img-ph">
       <img src="Reccard1.png" alt="Before — existing NICE guidance interface">
     </div>
 
@@ -168,21 +174,13 @@
 
     <!-- IMAGE -->
     <div class="body-img-ph">
-       <img src="after.png" alt="Before — existing NICE guidance interface">
+      <span>Image placeholder — drop your image here</span>
     </div>
 
     <div class="study-body-col">
 
       <h2 id="learnt">What I Learnt</h2>
-       <ul> <li>I learned that when clinical risk is involved, "obvious" is always better than "elegant". My initial assumption for a clean UI was corrected by the reality.
-</li>
-<li>I realised you don’t need the answer to every edge case to provide value. By building with "knowns" and rigorously testing with users, we were able to iterate and move forward.
-</li>
-<li>Early stakeholder alignment is essential but requires more than just a meeting, it requires navigating resistance through the building of relationships and forming trust.
-</li>
-<li>I found that multidisciplinary design reviews drift without structure. I’ve since redesigned our crit format to provide clear guardrails across the team.
-
-</ul>
+      <p>Placeholder — add your reflections here.</p>
 
     </div>
 
@@ -225,7 +223,16 @@
   .cover-img { width: 100%; height: 100%; object-fit: cover; }
   .cover-placeholder { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); border: 1px solid var(--border); padding: 16px 28px; }
 
-  /* ── Body — centred text column ── */
+  /* ── Outcome stat cards ── */
+  .outcome-cards { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; max-width: 980px; margin: 0 auto 64px; padding: 0 24px; }
+  .outcome-card { background: var(--bg-2); border: 1px solid var(--border); border-radius: 4px; padding: 2rem 1.5rem; display: flex; flex-direction: column; gap: 8px; }
+  .outcome-num { font-family: var(--serif); font-size: 3rem; font-weight: 700; line-height: 1; color: var(--text); }
+  .outcome-headline { font-size: 0.95rem; font-weight: 500; color: var(--text); line-height: 1.4; }
+  .outcome-body { font-size: 0.875rem; color: var(--text-muted); line-height: 1.7; margin-top: 4px; }
+
+  @media (max-width: 768px) {
+    .outcome-cards { grid-template-columns: 1fr; }
+  }
   .study-body-centered {
     padding: 80px 0;
   }
