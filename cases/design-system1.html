@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>CCMS Vision — John Bailey</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">John Bailey<span>.</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="../cases.html" class="nav-link active">Case Studies</a>
+      <a href="../resume.html" class="nav-link ">Résumé</a>
+      <a href="../experiments.html" class="nav-link ">Experiments</a>
+      <a href="../contact.html" class="nav-link ">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<script>
+(function () {
+  var toggle = document.querySelector('.nav-toggle');
+  var links  = document.querySelector('.nav-links');
+  if (toggle) {
+    toggle.addEventListener('click', function () {
+      var open = links.classList.toggle('open');
+      toggle.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    links.querySelectorAll('.nav-link').forEach(function (l) {
+      l.addEventListener('click', function () {
+        links.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+  function syncNavHeight() {
+    var h = document.querySelector('nav').offsetHeight;
+    document.documentElement.style.setProperty('--nav-height', h + 'px');
+  }
+  syncNavHeight();
+  window.addEventListener('resize', syncNavHeight);
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(syncNavHeight);
+  }
+})();
+</script>
+
+<main>
+
+  <!-- HERO -->
+  <div class="study-hero-wrap">
+    <div class="study-hero">
+      <div class="study-hero-left">
+        <a href="../cases.html" class="back-link">
+          <svg width="16" height="10" viewBox="0 0 16 10" fill="none">
+            <path d="M15 5H1M6 1L1 5l5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          All case studies
+        </a>
+        <h1 class="study-title">Defining a design vision to secure a £1m+ Investment in a new CCMS platform</h1>
+        <p class="study-desc">Led and de-risked the transformation of NICE's publishing and clinical guidance model, delivering a UX proof-of-concept that secured £1M+ in funding for a new CCMS — resulting in a 23% reduction in time-to-answer and a 12% improvement in task completion.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE NAV -->
+  <div class="page-nav" aria-label="Page sections">
+    <a href="#outcome">Outcome</a>
+    <span>|</span>
+    <a href="#challenge">Problem &amp; Context</a>
+    <span>|</span>
+    <a href="#role">My Role</a>
+    <span>|</span>
+    <a href="#approach">Approach</a>
+    <span>|</span>
+    <a href="#output">Output</a>
+    <span>|</span>
+    <a href="#constraints">Constraints</a>
+    <span>|</span>
+    <a href="#learnt">What I Learnt</a>
+  </div>
+
+  <!-- COVER IMAGE -->
+ 
+
+    <div class="study-cover">
+
+ <img src="../images/ccms-case.jpg" alt="CKS redesign" class="cover-img" /> 
+  </div>
+
+  <!-- BODY -->
+  <article class="study-body-centered">
+    <div class="study-body-col">
+
+      <h2 id="outcome">Outcome</h2>
+
+    </div>
+
+    <div class="outcome-cards">
+      <div class="outcome-card">
+        <div class="outcome-num">£1m+</div>
+        <div class="outcome-headline">Investment secured</div>
+        <div class="outcome-body">Led and de-risked the transformation of NICE's publishing model to deliver the UX proof-of-concept required to secure funding for a new CCMS.</div>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-num">12%</div>
+        <div class="outcome-headline">Improvement in task completion</div>
+        <div class="outcome-body">Achieved by redesigning end-to-end clinical journeys, aligning complex medical evidence with real-world decision-making workflows.</div>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-num">23%</div>
+        <div class="outcome-headline">Reduction in time-to-answer</div>
+        <div class="outcome-body">Reduced across core user journeys through optimisation of the end-to-end content funnel.</div>
+      </div>
+    </div>
+
+    <div class="study-body-col">
+
+      <h2 id="challenge">Problem &amp; Context</h2>
+      <p>NICE Guidance is authored as static Word documents and published as fragmented HTML. This "document-first" approach resulted in poor discoverability and excessive time-on-task in high-pressure clinical environments.</p>
+      <p>Previous survey research gave indication that transitioning to a dynamic, layered content would reduce broken user journeys, and improve user speed-to-answer.</p>
+      <p>To protect the integrity of NICE's core offering, we needed to move beyond static publishing to a model that serves our users: the time-poor clinician (instant answers) and the academic researcher (deep-dive evidence).</p>
+  <h3 class="body-subheading">Before</h3>
+  
+ 
+    </div>
+       <!-- IMAGE with uploaded Vector.jpg -->
+    <div class="body-img-ph">
+      <img src="Vector.png" alt="Before — existing NICE guidance interface">
+    </div>
+
+
+    <div class="study-body-col">
+
+      <h2 id="role">My Role</h2>
+      <ul>
+        <li>Led the redesign of the end-to-end user journey, optimising the content funnel which has resulted in a 23% reduction in 'time-to-answer'.</li>
+        <li>Synthesized complex clinical evidence into structured content models that mirrored real-world medical decision-making, leading to a 12% increase in successful task completion.</li>
+        <li>I de-risked a transformation of NICE's publishing and clinical guidance model to deliver the UX proof-of-concept required to secure £1M+ in funding for a new CCMS.</li>
+        <li>Embedded collaborative rituals and continuous research loops, speeding up iteration cycles and fostering alignment between multi-disciplinary teams and stakeholders.</li>
+      </ul>
+
+    </div>
+
+    <div class="study-body-col">
+
+      <h2 id="approach">Approach</h2>
+      <ul>
+        <li>Prioritised and validated user insights to develop journey maps for core archetypes: the "time-poor clinician" and the "deep-dive researcher" to inform design strategy.</li>
+        <li>Established baseline UX metrics, measuring time-on-task and completion rates to quantify the friction in the current experience and track transformation success.</li>
+        <li>Simplified topic content and hierarchy to align with the new content model, ensuring it met user needs and internal publishing workflows.</li>
+        <li>Reframed assumptions into measurable hypotheses, using prototypes to stress-test assumptions and safely de-risk the transformation of NICE's core publishing model.</li>
+      </ul>
+
+      <h3 class="body-subheading">Recommendation card - Iteration 1</h3>
+       <p>The aim was to balance the needs of both researchers, who require access to deeper, more detailed layers of content, and time-poor clinicians, who need to quickly scan and extract essential surface-level information.</p> 
+        <P>This approach keeps pages visually minimal and clean, aligns with modern UI patterns for “More Info,” and reduces vertical height within dense lists, making content easier to navigate. By progressively disclosing information, it also helps reduce cognitive load, particularly on content-rich pages where similar components are repeated frequently.
+</P>
+<p>Hypothesis: Introducing progressive disclosure through “More Info” patterns will improve content accessibility and usability by enabling clinicians to find key information faster while still allowing researchers to access deeper detail when needed, ultimately reducing cognitive load and improving task completion efficiency.</p>
+</p>
+    </div>
+    <div class="body-img-ph">
+      <img src="Reccard1.png" alt="Before — existing NICE guidance interface">
+    </div>
+
+
+    <div class="study-body-col">
+
+     <h3 class="body-subheading">Recommendation card - Feedback and iteration 2</h3>
+       <p>User Feedback - Users did not intuitively recognize that critical supporting information was housed behind an icon. This discoverability issue led to, increased time-on-task, and a measurable reduction in overall task completion"</p>
+       <p>Decisions based on feedback - Exposed all supporting links and clinical evidence directly within the recommendation card, removing the hidden menu to prioritise transparency and immediate speed-to-answer. Also Ordered supporting links strictly by user need and business criticality
+
+</p>
+
+    </div>
+
+    <div class="body-img-ph">
+      <img src="recafter.png" alt="Before — existing NICE guidance interface"> 
+    </div>
+
+    <div class="study-body-col">
+
+      <h2 id="output">Output</h2>
+    
+
+    </div>
+
+    <!-- IMAGE -->
+    <div class="body-img-ph">
+      <img src="after.png" alt="Before — existing NICE guidance interface">
+    </div>
+
+     <div class="study-body-col">
+
+      <h2 id="constraints">Constraints</h2>
+      <p>Because of NICE’s clinical governance and approval processes, we knew we couldn’t directly rewrite the clinical recommendation content. Instead, we focused on improving the surrounding experience—such as progressive reveal of evidence layers, clearer orientation text, and more effective microcopy. Working within these constraints, we were still able to achieve a 12% increase in task completion.
+</p>We were designing for two user groups with competing needs: those wanting quick, high-level answers and those needing detailed evidence.
+<p>I tested a minimal UI to support both—allowing users to scan and reveal more detail on demand—but feedback showed this created too much uncertainty.
+</p><p>So we adapted the design to surface key links upfront, ensuring it supported both quick scanning and deeper exploration.
+</p>
+
+    </div>
+
+    <div class="study-body-col">
+
+      <h2 id="learnt">What I Learnt</h2>
+     <ul><li>I learned that when clinical risk is involved, "obvious" is always better than "elegant". My initial assumption for a clean UI was corrected by the reality.
+</li>
+<li>I realised you don’t need the answer to every edge case to provide value. By building with "knowns" and rigorously testing with users, we were able to iterate and move forward.
+</li><li>
+Early stakeholder alignment is essential but requires more than just a meeting, it requires navigating resistance through the building of relationships and forming trust.
+</li>
+<li>I found that multidisciplinary design reviews drift without structure. I’ve since redesigned our crit format to provide clear guardrails across the team.
+</li></ul>
+
+    </div>
+
+  </article>
+
+  <!-- NEXT CASE -->
+  <div class="next-case">
+    <a href="cks-redesign.html" class="next-link">
+      <span class="next-label">Next project</span>
+      <span class="next-title">Cutting time-to-answer for clinicians through end-to-end service redesign</span>
+      <svg width="20" height="12" viewBox="0 0 16 10" fill="none">
+        <path d="M1 5h14M10 1l5 4-5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <p>© 2026 — John Bailey</p>
+  </div>
+</footer>
+
+<style>
+  /* ── Hero (identical to existing cases) ── */
+
+  .study-hero { padding: 30px 64px 10px; max-width: 1500px; margin: 0 auto; text-align: center; }
+  .back-link { display: inline-flex; align-items: center; gap: 10px; font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 40px; transition: color 0.25s; }
+  .back-link:hover { color: var(--pop); }
+  .study-title { font-family: var(--serif); font-size: clamp(2.2rem, 4.5vw, 4rem); font-weight: 700; line-height: 1.1; margin-bottom: 28px; }
+  .study-desc { font-size: 1.05rem; color: var(--text-muted); max-width: 780px; line-height: 1.75; margin: 0 auto; }
+  .page-nav { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; padding: 40px 64px; border-bottom: 1px solid var(--border); background: var(--bg); }
+  .page-nav a { font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); transition: color 0.2s; text-decoration: underline; text-underline-offset: 4px; }
+  .page-nav a:hover { color: var(--pop); text-decoration: none; }
+  .page-nav span { color: var(--border); font-size: 0.8rem; user-select: none; }
+
+  /* ── Cover (identical to existing cases) ── */
+  .study-cover { width: 100%; max-width: 1800px; margin: 0 auto; height: 500px; background: var(--bg-2); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .cover-img { width: 100%; height: 100%; object-fit: cover; }
+  .cover-placeholder { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); border: 1px solid var(--border); padding: 16px 28px; }
+
+  /* ── Outcome stat cards ── */
+  .outcome-cards { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; max-width: 980px; margin: 0 auto 64px; padding: 0 24px; }
+  .outcome-card { background: var(--bg-2); border: 1px solid var(--border); border-radius: 4px; padding: 2rem 1.5rem; display: flex; flex-direction: column; gap: 8px; }
+  .outcome-num { font-family: var(--serif); font-size: 3rem; font-weight: 700; line-height: 1; color: var(--text); }
+  .outcome-headline { font-size: 0.95rem; font-weight: 500; color: var(--text); line-height: 1.4; }
+  .outcome-body { font-size: 0.875rem; color: var(--text-muted); line-height: 1.7; margin-top: 4px; }
+
+  @media (max-width: 768px) {
+    .outcome-cards { grid-template-columns: 1fr; }
+  }
+  .study-body-centered {
+    padding: 80px 0;
+  }
+
+  /* The text column: max 980px, centred */
+  .study-body-col {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .study-body-col h2 { font-family: var(--serif); font-size: 1.75rem; font-weight: 700; margin-bottom: 22px; padding-top: 52px; color: var(--text); }
+  .study-body-col h2:first-child { padding-top: 0; }
+  .study-body-col p { font-size: 1.1em; line-height: 1.85; color: rgba(240,237,232,0.8); margin-bottom: 18px; }
+  .study-body-col blockquote { border-left: 2px solid var(--pop); padding: 18px 26px; margin: 36px 0; background: rgba(200,184,154,0.06); font-family: var(--serif); font-size: 1.2rem; font-style: italic; color: var(--text); line-height: 1.6; }
+  .study-body-col ul { padding-left: 24px; margin-bottom: 20px; color: rgba(240,237,232,0.8); font-size: 1.1em; line-height: 1.85; }
+  .study-body-col li { margin-bottom: 8px; line-height: 1.7; }
+  .study-body-col strong { color: var(--text); font-weight: 500; }
+  .study-body-col h3 { font-family: var(--serif); font-size: 1.3rem; font-weight: 700; color: #fff; margin-bottom: 22px;  }
+  .body-subheading { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); margin-top: 40px; margin-bottom: 0; }
+
+  /* ── Body images — 1280px wide, centred, flexible height ── */
+  .body-img-ph {
+    width: 100%;
+    max-width: 1280px;
+    margin: 48px auto;
+    min-height: 400px;          /* default minimum — remove once you add a real image */
+    background: var(--bg-2);
+    border: 1px dashed rgba(255,255,255,0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  /* Subtle diagonal texture on placeholder */
+  .body-img-ph::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(-45deg, transparent, transparent 20px, rgba(255,255,255,0.015) 20px, rgba(255,255,255,0.015) 21px);
+  }
+  .body-img-ph span {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    border: 1px dashed rgba(255,255,255,0.12);
+    padding: 8px 16px;
+    position: relative;
+    z-index: 1;
+  }
+  /* When you swap in a real image, it fills naturally */
+  .body-img-ph img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* ── Next case (identical to existing cases) ── */
+  .next-case { border-top: 1px solid var(--border); padding: 0 64px 80px; max-width: 1920px; margin: 0 auto; }
+  .next-link { display: flex; align-items: center; gap: 24px; padding: 48px 0; transition: gap 0.3s var(--ease); }
+  .next-link:hover { gap: 32px; }
+  .next-label { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); }
+  .next-title { font-family: var(--serif); font-size: 1.6rem; font-weight: 700; flex: 1; }
+  .next-link svg { color: var(--pop); flex-shrink: 0; }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .study-hero { padding: 110px 24px 56px; }
+    .study-cover { height: 240px; }
+    .study-body-centered { padding: 56px 0; }
+    .body-img-ph { min-height: 220px; margin: 32px 16px; }
+    .next-case { padding: 0 24px 60px; }
+  }
+</style>
+
+</body>
+</html>
