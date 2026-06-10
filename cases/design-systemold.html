@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Creating a Scalable Design System — John Bailey</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">John Bailey<span>.</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="../cases.html" class="nav-link active">Case Studies</a>
+      <a href="../resume.html" class="nav-link ">Résumé</a>
+      <a href="../experiments.html" class="nav-link ">Experiments</a>
+      <a href="../contact.html" class="nav-link ">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<script>
+(function () {
+  /* ── Hamburger toggle ── */
+  var toggle = document.querySelector('.nav-toggle');
+  var links  = document.querySelector('.nav-links');
+  if (toggle) {
+    toggle.addEventListener('click', function () {
+      var open = links.classList.toggle('open');
+      toggle.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    links.querySelectorAll('.nav-link').forEach(function (l) {
+      l.addEventListener('click', function () {
+        links.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+
+  /*
+   * ── Nav-height sync ──────────────────────────────────────────────────────
+   * Reads the nav's actual rendered height (which already includes
+   * env(safe-area-inset-top) because the nav has padding-top for it).
+   * Writes that value into --nav-height on :root so body padding-top
+   * always matches exactly, on every device and orientation.
+   */
+  function syncNavHeight() {
+    var h = document.querySelector('nav').offsetHeight;
+    document.documentElement.style.setProperty('--nav-height', h + 'px');
+  }
+  syncNavHeight();
+  window.addEventListener('resize', syncNavHeight);
+  /* Re-sync after fonts load — web fonts can change the logo height */
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(syncNavHeight);
+  }
+})();
+</script>
+
+<main>
+
+  <div class="study-hero-wrap">
+    <div class="study-hero">
+      <div class="study-hero-left">
+        <a href="../cases.html" class="back-link">
+          <svg width="16" height="10" viewBox="0 0 16 10" fill="none">
+            <path d="M15 5H1M6 1L1 5l5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          All case studies
+        </a>
+        <h1 class="study-title">Creating and scaling a unified NICE Design System</h1>
+        <p class="study-desc">Created a unified design system and token structure across 30+ codebases and 34 products, reducing redundant design and development effort by 13% and delivering 32% faster load times across core services.</p>
+        <a href="https://design-system.nice.org.uk" target="_blank" rel="noopener" class="cta-btn">
+          View site
+          <svg width="16" height="10" viewBox="0 0 16 10" fill="none">
+            <path d="M1 5h14M10 1l5 4-5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div class="study-cover">
+    
+   <img src="../images/ds-case.jpg" alt="NICE Design System" class="cover-img" />
+  </div>
+
+  <article class="study-body">
+  <div class="study-body-inner">
+
+    <h2 id="challenge">The Challenge</h2>
+    <p>As the UK's primary source for healthcare guidance with over 2.5 million users per month, NICE manages a complex ecosystem of over 30 separate applications and services. There was a reliance on a generic Bootstrap implementation that had created significant technical debt, bloated codebases, and a failure to meet modern accessibility standards.</p>
+    <p>A lack of clear guidelines and consistent updates had eroded internal trust, while excessive file sizes — driven by redundant CSS, JS, and fonts — led to poor performance and slow loading times. The current framework was not built for scale and lacked the necessary standards and governance to support a modern digital public service.</p>
+
+    <div class="section-img-ph"><span><img src="../images/caseds1.jpg" alt="NICE guidance old version"  /></span></div>
+    <div class="section-img-ph"><span><img src="../images/caseds3.jpg" alt="NICE guidance old version problems"  /></span></div>
+
+    
+
+    <h2 id="role">My Role</h2>
+    <p>Using my experience and cross-team insights, I built a strategic business case and secured a budget by demonstrating the clear ROI of a modernised design system. I conducted the development of our initial content guidelines, foundations, and core component UI library.</p>
+    <p>To drive adoption, I led an internal promotion campaign to showcase the system's practical applications within individual teams. I also defined our long-term vision and strategy for a unified digital future.</p>
+
+    <div class="section-img-ph"><span><img src="../images/caseds2.jpg" alt="showcase of how new design system would look on homepage"  /></span></div>
+
+    <h2 id="approach">The Approach</h2>
+    <p>I'd seen previous attempts to launch a design system stall because they stayed as abstract ideas for too long, never quite connecting with our broader strategic goals. I recognised that to get real buy-in, we needed more than a static pitch deck — we needed something tangible. A working model that highlighted impact, value, and mapped back to what the organisation was trying to achieve.</p>
+    <p>To make it happen, I collaborated with our lead developer to build a working MVP in the gaps between daily delivery tasks. We did horizon scanning against industry gold standards like GOV.UK and the NHS, but adapted to solve our specific challenges — particularly around complex, long-form layered content.</p>
+
+    <blockquote>"People wanted a single source of truth they could trust, with clear guidance so they didn't have to second-guess every decision."</blockquote>
+
+    <p>Our internal research confirmed that teams were wasting far too much time solving the same basic design problems over and over. A large part of my time was spent speaking to teams around content hierarchy, structure, and identifying the most important elements needed to support their roles. Once we had the right model, it was used to build prototypes and form the foundations to scale the design system — ensuring everything published was backed by evidence from our own research or established public sector organisations, so teams had confidence in what they were using.</p>
+
+    <div class="section-img-ph"><span><img src="../images/caseds4.jpg" alt="example of design system"  /></span></div>
+
+    <h2 id="outcome">Outcome &amp; Impact</h2>
+    <p>The NICE Design System is now the foundational framework for building and maintaining digital services at NICE. Powering 30+ products, it ensures a cohesive, accessible experience for all users and serves as the definitive source of truth for both internal teams and external agency partners.</p>
+    <p>As the lead for the NICE Design System, I've moved the project from its initial setup to a mature, high-impact service that aligns our design vision with organisational goals. By leading the migration from Adobe XD and Axure to a centralised Figma library, I've created a single source of truth that simplifies how our teams work. My role now focuses on bridging the gap between design and delivery — managing the roadmap with cross-functional stakeholders and driving adoption through monthly show-and-tells.</p>
+    <ul>
+      <li><strong>13% efficiency gain</strong> — by benchmarking standard tasks against legacy workflows, we calculated a 13% reduction in redundant design and development effort across an average project timeline</li>
+      <li><strong>32% faster load times</strong> — optimised code architecture within the system led to an average 32% increase in load speeds, significantly enhancing the experience for long-form content users</li>
+      <li><strong>Accessibility by default</strong> — every component audited from inception, ensuring all products built with the system meet WCAG 2.2 standards</li>
+      <li><strong>Unified design language</strong> — implemented Design Tokens to bridge the gap between Figma and the codebase, eliminating translation errors and ensuring 1:1 visual consistency</li>
+    </ul>
+
+    <div class="section-img-ph"><span><img src="../images/caseds5.jpg" alt="NICE figma UI"/></span></div>
+
+    <h2 id="reflection">Reflection</h2>
+    <p>The complexity of legacy systems significantly impacted our rollout timeline. With different teams operating on different backend systems, and existing infrastructure unable to support new components without rebuilding, the pace of adoption was much slower than anticipated. What felt like a straightforward design system rollout quickly became a much larger technical undertaking. In future projects, I'd map backend constraints much earlier — before committing to timelines — so the plan is realistic from the start.</p>
+    <p>Getting senior stakeholder buy-in took longer than it should have. Without leadership aligned early, momentum stalled at key decision points, which had a knock-on effect on rollout across teams. Next time, I'd involve developers much earlier in the design process — not just to pressure-test feasibility, but because having technical voices in the room earlier builds a stronger, more credible case when presenting to leadership.</p>
+
+  </div>
+  </article>
+
+  <div class="next-case">
+    <a href="diverse-team.html" class="next-link">
+      <span class="next-label">Next project</span>
+      <span class="next-title">Growing a diverse, inclusive design team</span>
+      <svg width="20" height="12" viewBox="0 0 16 10" fill="none">
+        <path d="M1 5h14M10 1l5 4-5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <p>© 2026 — John Bailey</p>
+  </div>
+</footer>
+
+<style>
+  .study-hero-wrap { border-bottom: 1px solid var(--border); }
+  .study-hero { padding: 160px 64px 80px; max-width: 1920px; margin: 0 auto; display: grid; grid-template-columns: 1fr 300px; gap: 80px; align-items: start; }
+  .back-link { display: inline-flex; align-items: center; gap: 10px; font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 32px; transition: color 0.25s; }
+  .back-link:hover { color: var(--pop); }
+  .study-title { font-family: var(--serif); font-size: clamp(2.2rem, 4.5vw, 4rem); font-weight: 700; line-height: 1.1; margin-bottom: 22px; }
+  .study-desc { font-size: 1.05rem; color: var(--text-muted); max-width: 780px; line-height: 1.75; }
+  .impact-sidebar { border: 1px solid rgba(255,255,255,0.1); background: var(--bg-2); padding: 28px; position: sticky; top: 72px; }
+  .impact-label { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .impact-label::after { content: ''; flex: 1; height: 1px; background: rgba(200,184,154,0.3); }
+  .impact-bullets { display: flex; flex-direction: column; }
+  .impact-bullet { display: flex; align-items: center; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--border); }
+  .impact-bullet:last-child { border-bottom: none; padding-bottom: 0; }
+  .impact-bullet::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--pop); flex-shrink: 0; }
+  .bullet-text { font-size: 0.9rem; color: var(--text); line-height: 1.5; }
+  .study-cover { width: 100%; max-width: 1920px; margin: 0 auto; height: 500px; background: var(--bg-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .cover-img { width: 100%; height: 100%; object-fit: cover; }
+  .cover-placeholder { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); border: 1px solid var(--border); padding: 16px 28px; }
+  .study-body { padding: 80px 64px; max-width: 1920px; margin: 0 auto; }
+  .study-body-inner { max-width: 720px; }
+  .study-body-inner h2 { font-family: var(--serif); font-size: 1.75rem; font-weight: 700; margin-bottom: 22px; padding-top: 52px; color: var(--text); }
+  .study-body-inner h2:first-child { padding-top: 0; }
+  .study-body-inner p { font-size: 1rem; line-height: 1.85; color: rgba(240,237,232,0.8); margin-bottom: 18px; }
+  .study-body-inner blockquote { border-left: 2px solid var(--pop); padding: 18px 26px; margin: 36px 0; background: rgba(200,184,154,0.06); font-family: var(--serif); font-size: 1.2rem; font-style: italic; color: var(--text); line-height: 1.6; }
+  .study-body-inner ul { padding-left: 24px; margin-bottom: 20px; color: rgba(240,237,232,0.8); }
+  .study-body-inner li { margin-bottom: 8px; line-height: 1.7; }
+  .study-body-inner strong { color: var(--text); font-weight: 500; }
+  .study-body-inner em { color: var(--accent); }
+  .study-body-inner hr { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  .body-img { width: 100%; margin: 36px 0; border: 1px solid var(--border); display: block; }
+  .section-img-ph { width: 100%; aspect-ratio: 16 / 9; margin: 40px 0; background: var(--bg-2); border: 1px dashed rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+  .section-img-ph::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(-45deg, transparent, transparent 20px, rgba(255,255,255,0.015) 20px, rgba(255,255,255,0.015) 21px); }
+  .section-img-ph span { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); border: 1px dashed rgba(255,255,255,0.12); padding: 8px 16px; position: relative; z-index: 1; }
+  .next-case { border-top: 1px solid var(--border); padding: 0 64px 80px; max-width: 1920px; margin: 0 auto; }
+  .next-link { display: flex; align-items: center; gap: 24px; padding: 48px 0; transition: gap 0.3s var(--ease); }
+  .next-link:hover { gap: 32px; }
+  .next-label { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); }
+  .next-title { font-family: var(--serif); font-size: 1.6rem; font-weight: 700; flex: 1; }
+  .next-link svg { color: var(--pop); flex-shrink: 0; }
+  @media (max-width: 768px) {
+    .study-hero { grid-template-columns: 1fr; padding: 110px 24px 56px; gap: 40px; }
+    .study-cover { height: 240px; }
+    .study-body { padding: 56px 24px; }
+    .next-case { padding: 0 24px 60px; }
+  }
+  .cta-btn {
+    display: inline-flex; align-items: center; gap: 14px;
+    font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--pop);
+    border: 1px solid var(--pop-dim); padding: 16px 28px;
+    transition: all 0.3s var(--ease); width: fit-content; margin-top: 28px;
+  }
+  .cta-btn:hover { border-color: var(--pop); color: var(--text); background: var(--pop-glow); }
+  .cta-btn:hover svg { transform: translateX(5px); }
+  .cta-btn svg { transition: transform 0.3s var(--ease); }
+</style>
+
+</body>
+</html>

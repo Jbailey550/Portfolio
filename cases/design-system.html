@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Creating a Scalable Design System — John Bailey</title>
+  <title>Design System — John Bailey</title>
   <link rel="stylesheet" href="../style.css" />
 </head>
 <body>
@@ -25,7 +25,6 @@
 
 <script>
 (function () {
-  /* ── Hamburger toggle ── */
   var toggle = document.querySelector('.nav-toggle');
   var links  = document.querySelector('.nav-links');
   if (toggle) {
@@ -44,21 +43,12 @@
       });
     });
   }
-
-  /*
-   * ── Nav-height sync ──────────────────────────────────────────────────────
-   * Reads the nav's actual rendered height (which already includes
-   * env(safe-area-inset-top) because the nav has padding-top for it).
-   * Writes that value into --nav-height on :root so body padding-top
-   * always matches exactly, on every device and orientation.
-   */
   function syncNavHeight() {
     var h = document.querySelector('nav').offsetHeight;
     document.documentElement.style.setProperty('--nav-height', h + 'px');
   }
   syncNavHeight();
   window.addEventListener('resize', syncNavHeight);
-  /* Re-sync after fonts load — web fonts can change the logo height */
   if (document.fonts && document.fonts.ready) {
     document.fonts.ready.then(syncNavHeight);
   }
@@ -67,6 +57,7 @@
 
 <main>
 
+  <!-- HERO -->
   <div class="study-hero-wrap">
     <div class="study-hero">
       <div class="study-hero-left">
@@ -76,76 +67,199 @@
           </svg>
           All case studies
         </a>
-        <h1 class="study-title">Creating and scaling a unified NICE Design System</h1>
-        <p class="study-desc">Created a unified design system and token structure across 30+ codebases and 34 products, reducing redundant design and development effort by 13% and delivering 32% faster load times across core services.</p>
-        <a href="https://design-system.nice.org.uk" target="_blank" rel="noopener" class="cta-btn">
-          View site
-          <svg width="16" height="10" viewBox="0 0 16 10" fill="none">
-            <path d="M1 5h14M10 1l5 4-5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
+        <h1 class="study-title">Establishing a unified design system at NICE</h1>
+        <p class="study-desc">Led the creation and rollout of a unified design system across 30+ codebases and 34 products, reducing delivery effort by 13% and improving load performance by 32% across core services.</p>
       </div>
-
-      
     </div>
   </div>
 
+  <!-- PAGE NAV -->
+  <div class="page-nav" aria-label="Page sections">
+    <a href="#outcome">Outcome</a>
+    <span>|</span>
+    <a href="#challenge">Problem &amp; Context</a>
+    <span>|</span>
+    <a href="#role">My Role</a>
+    <span>|</span>
+    <a href="#approach">Approach</a>
+    <span>|</span>
+    <a href="#impact">Impact</a>
+    <span>|</span>
+    <a href="#learnt">What I Learnt</a>
+  </div>
+
+  <!-- COVER IMAGE -->
   <div class="study-cover">
-    
-   <img src="../images/ds-case.jpg" alt="NICE Design System" class="cover-img" />
+    <img src="../images/cs-covers-ds.jpg" alt="Design system" class="cover-img" />
   </div>
 
-  <article class="study-body">
-  <div class="study-body-inner">
+  <!-- BODY -->
+  <article class="study-body-centered">
+    <div class="study-body-col">
 
-    <h2 id="challenge">The Challenge</h2>
-    <p>As the UK's primary source for healthcare guidance with over 2.5 million users per month, NICE manages a complex ecosystem of over 30 separate applications and services. There was a reliance on a generic Bootstrap implementation that had created significant technical debt, bloated codebases, and a failure to meet modern accessibility standards.</p>
-    <p>A lack of clear guidelines and consistent updates had eroded internal trust, while excessive file sizes — driven by redundant CSS, JS, and fonts — led to poor performance and slow loading times. The current framework was not built for scale and lacked the necessary standards and governance to support a modern digital public service.</p>
+      <h2 id="outcome">Outcome</h2>
 
-    <div class="section-img-ph"><span><img src="../images/caseds1.jpg" alt="NICE guidance old version"  /></span></div>
-    <div class="section-img-ph"><span><img src="../images/caseds3.jpg" alt="NICE guidance old version problems"  /></span></div>
+    </div>
 
-    
+    <div class="outcome-cards">
+      <div class="outcome-card">
+        <div class="outcome-num">13%</div>
+        <div class="outcome-headline">Reduction in delivery effort</div>
+        <div class="outcome-body">Benchmarked common design and development tasks against legacy workflows, demonstrating measurable efficiency gains over a 4-month project lifecycle for a team of 5.</div>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-num">32%</div>
+        <div class="outcome-headline">Reduction in page load time</div>
+        <div class="outcome-body">Optimised frontend performance and component architecture, decreasing average page load times across a sample of 200,000 user sessions to accelerate access to critical guidance.</div>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-num">34</div>
+        <div class="outcome-headline">Products unified</div>
+        <div class="outcome-body">Consistent experience across 30+ products — accessibility (WCAG 2.2 AA) embedded into delivery, reducing compliance risk, increasing team trust and adoption, and minimising design–development rework</div>
+      </div>
+    </div>
 
-    <h2 id="role">My Role</h2>
-    <p>Using my experience and cross-team insights, I built a strategic business case and secured a budget by demonstrating the clear ROI of a modernised design system. I conducted the development of our initial content guidelines, foundations, and core component UI library.</p>
-    <p>To drive adoption, I led an internal promotion campaign to showcase the system's practical applications within individual teams. I also defined our long-term vision and strategy for a unified digital future.</p>
+    <div class="study-body-col">
 
-    <div class="section-img-ph"><span><img src="../images/caseds2.jpg" alt="showcase of how new design system would look on homepage"  /></span></div>
+      <h2 id="challenge">Problem &amp; Context</h2>
+      <p>NICE operates a complex ecosystem of digital services used by over 2.5 million users per month. However, delivery was slowed by fragmented systems and a lack of shared standards.</p>
+      <p>A heavy reliance on a legacy Bootstrap framework — not built for scale — had created bloated CSS, JS, and fonts that impacted performance. Inconsistent experiences across services had eroded trust in shared components, and accessibility was handled reactively rather than by design. This created duplication across teams, increased delivery time, and made it difficult to scale consistently.</p>
 
-    <h2 id="approach">The Approach</h2>
-    <p>I'd seen previous attempts to launch a design system stall because they stayed as abstract ideas for too long, never quite connecting with our broader strategic goals. I recognised that to get real buy-in, we needed more than a static pitch deck — we needed something tangible. A working model that highlighted impact, value, and mapped back to what the organisation was trying to achieve.</p>
-    <p>To make it happen, I collaborated with our lead developer to build a working MVP in the gaps between daily delivery tasks. We did horizon scanning against industry gold standards like GOV.UK and the NHS, but adapted to solve our specific challenges — particularly around complex, long-form layered content.</p>
+      <h3 class="body-subheading">Key challenges included</h3>
 
-    <blockquote>"People wanted a single source of truth they could trust, with clear guidance so they didn't have to second-guess every decision."</blockquote>
+       <ul>
+        <li>Poor and inconsistent user experiences across services</li>
+        <li>Heavy reliance on a legacy Bootstrap framework not built for scale</li>
+        <li>Bloated CSS, JS, and fonts impacting performance</li>
+        <li>Lack of trust in shared components and guidance</li>
+        <li>Accessibility handled reactively rather than by design</li>
+        
+      </ul>
 
-    <p>Our internal research confirmed that teams were wasting far too much time solving the same basic design problems over and over. A large part of my time was spent speaking to teams around content hierarchy, structure, and identifying the most important elements needed to support their roles. Once we had the right model, it was used to build prototypes and form the foundations to scale the design system — ensuring everything published was backed by evidence from our own research or established public sector organisations, so teams had confidence in what they were using.</p>
+      <p>This created duplication across teams, increased delivery time, and made it difficult to scale consistently.</p>
 
-    <div class="section-img-ph"><span><img src="../images/caseds4.jpg" alt="example of design system"  /></span></div>
+    </div>
 
-    <h2 id="outcome">Outcome &amp; Impact</h2>
-    <p>The NICE Design System is now the foundational framework for building and maintaining digital services at NICE. Powering 30+ products, it ensures a cohesive, accessible experience for all users and serves as the definitive source of truth for both internal teams and external agency partners.</p>
-    <p>As the lead for the NICE Design System, I've moved the project from its initial setup to a mature, high-impact service that aligns our design vision with organisational goals. By leading the migration from Adobe XD and Axure to a centralised Figma library, I've created a single source of truth that simplifies how our teams work. My role now focuses on bridging the gap between design and delivery — managing the roadmap with cross-functional stakeholders and driving adoption through monthly show-and-tells.</p>
-    <ul>
-      <li><strong>13% efficiency gain</strong> — by benchmarking standard tasks against legacy workflows, we calculated a 13% reduction in redundant design and development effort across an average project timeline</li>
-      <li><strong>32% faster load times</strong> — optimised code architecture within the system led to an average 32% increase in load speeds, significantly enhancing the experience for long-form content users</li>
-      <li><strong>Accessibility by default</strong> — every component audited from inception, ensuring all products built with the system meet WCAG 2.2 standards</li>
-      <li><strong>Unified design language</strong> — implemented Design Tokens to bridge the gap between Figma and the codebase, eliminating translation errors and ensuring 1:1 visual consistency</li>
-    </ul>
+   <div class="body-img-ph">
+      <img src="../images/dsold.jpg" alt="Before — existing NICE guidance interface">
+    </div>
 
-    <div class="section-img-ph"><span><img src="../images/caseds5.jpg" alt="NICE figma UI"/></span></div>
+    <div class="study-body-col">
 
-    <h2 id="reflection">Reflection</h2>
-    <p>The complexity of legacy systems significantly impacted our rollout timeline. With different teams operating on different backend systems, and existing infrastructure unable to support new components without rebuilding, the pace of adoption was much slower than anticipated. What felt like a straightforward design system rollout quickly became a much larger technical undertaking. In future projects, I'd map backend constraints much earlier — before committing to timelines — so the plan is realistic from the start.</p>
-    <p>Getting senior stakeholder buy-in took longer than it should have. Without leadership aligned early, momentum stalled at key decision points, which had a knock-on effect on rollout across teams. Next time, I'd involve developers much earlier in the design process — not just to pressure-test feasibility, but because having technical voices in the room earlier builds a stronger, more credible case when presenting to leadership.</p>
+      <h2 id="role">My Role</h2>
+      <p>As Lead UX Designer, I:</p>
+      <ul>
+        <li>Built the business case and secured stakeholder buy-in through measurable efficiency gains.</li>
+        <li>Defined the vision and strategy for a unified design system.</li>
+        <li>Led the creation of foundations, components, and content guidelines.</li>
+        <li>Established governance and contribution models.</li>
+        <li>Drove adoption through team engagement, demos, and embedded delivery.</li>
+        <li>Managed roadmap alignment across design, engineering, and product.</li>
+      </ul>
 
-  </div>
+    </div>
+
+    <div class="study-body-col">
+
+      <h2 id="approach">Approach</h2>
+
+      <h3 class="body-subheading">Driving buy-in through delivery</h3>
+      <p>Previous attempts had failed due to being too abstract, siloed, and disconnected from organisational priorities.</p> 
+      <p> I shifted the approach to:</p>
+        <ul>
+       <li>Build a working pilot instead of a conceptual proposal</li>
+        <li>Used real service examples to demonstrate value early</li>
+         <li>Adapted proven patterns from public sector design systems to meet NICE's specific needs</li>
+</ul>
+</div>
+
+   <div class="body-img-ph">
+      <img src="../images/dsshow.jpg" alt="Example of rollout idea">
+    </div>
+<div class="study-body-col">
+      <h3 class="body-subheading">Designing for scale under constraints</h3>
+      <p>The design system had to be developed alongside live product delivery, with limited team capacity and competing priorities. A key tension was balancing the flexibility required by content teams with the consistency required by developers. To manage this, I:</p>
+      <ul>
+        <li>Prioritised high-frequency, high-impact components over edge cases.</li>
+        <li>Used unmoderated research to gather insight quickly at scale, trading depth for speed to maintain momentum.</li>
+        <li>Used modular components and controlled variants to balance flexibility for content teams with consistency for developers.</li>
+        <li>Broke work into small, modular increments, prioritising continuous delivery.</li>
+      </ul>
+
+    </div>
+
+ 
+
+    <div class="study-body-col">
+
+      <h3 class="body-subheading">Creating a trusted source of truth</h3>
+      <p>To rebuild trust and support adoption:</p>
+      <ul>
+        <li>All components were grounded in user research and established standards</li>
+         <li>Accessibility (WCAG 2.2 AA) was embedded from the outset, avoiding costly retrofitting later </li>
+         <li>Created clear documentation focused on practical usage rather than exhaustive detail </li>
+        <li>Established feedback loops — accepting that the system would evolve rather than attempting to get everything right first time.</p>
+</li></ul>
+    </div>
+
+    <div class="study-body-col">
+
+      <h2 id="impact">Impact</h2>
+
+     <p>The <a href="https://design-system.nice.org.uk/" target="_blank" rel="noopener">NICE Design System</a> is now the foundational framework for building and maintaining digital services at NICE, powering 30+ products and serving as the definitive source of truth for both internal teams and external agency partners. My role now focuses on bridging the gap between design and delivery, managing the roadmap with cross-functional stakeholders and driving adoption through monthly show-and-tells.</p>
+
+      <h3 class="body-subheading">Quantitative</h3>
+      <ul>
+        <li><strong>13% reduction in delivery effort</strong> — benchmarked against legacy workflows across a 4-month project lifecycle for a team of 5.</li>
+        <li><strong>32% reduction in page load time</strong> — across a sample of 200,000 user sessions, accelerating access to critical guidance.</li>
+      </ul>
+
+      <h3 class="body-subheading">Qualitative</h3>
+      <ul>
+        <li>Consistent user experience across 30+ products.</li>
+        <li>Accessibility embedded into delivery, reducing compliance risk.</li>
+        <li>Increased trust and adoption across teams.</li>
+        <li>Reduced rework between design and development.</li>
+      </ul>
+
+      <h3 class="body-subheading">Strategic</h3>
+      <ul>
+        <li>Established a scalable foundation for all new services.</li>
+        <li>Shifted teams from isolated delivery to reusable, system-led development.</li>
+        <li>Enabled faster onboarding for new designers and developers.</li>
+        <li>Created a single source of truth for internal teams and external partners.</li>
+      </ul>
+
+      
+
+    </div>
+
+    <!-- ROLLOUT IMAGE -->
+     <div class="body-img-ph">
+      <img src="../images/dslive1.jpg" alt="Design system 2026">
+    </div>
+    <div class="body-img-ph">
+      <img src="../images/dslive2.jpg" alt="Design system 2026 rolled out">
+    </div>
+
+    <div class="study-body-col">
+
+      <h2 id="learnt">What I Learnt</h2>
+      <ul>
+        <li><strong>Adoption is the product.</strong> Shipping a high-quality design system is only half the challenge. Its value is realised through adoption. I learned to invest as much in advocacy, onboarding, and documentation as in the components themselves.</li>
+        <li><strong>Prioritisation drives momentum.</strong> With limited team capacity, I had to be deliberate about what not to do. Focusing on high-frequency, high-impact components and breaking work into small increments allowed us to maintain momentum and deliver continuous value without overextending the team.</li>
+        <li><strong>Technical constraints shape delivery.</strong> What began as a UX initiative quickly became a complex technical integration. Legacy systems and fragmented architectures slowed adoption more than anticipated. I learned to involve engineering earlier, mapping dependencies and constraints upfront to ensure plans were realistic from the start.</li>
+      </ul>
+
+    </div>
+
   </article>
 
+  <!-- NEXT CASE -->
   <div class="next-case">
-    <a href="diverse-team.html" class="next-link">
+    <a href="cks-redesign.html" class="next-link">
       <span class="next-label">Next project</span>
-      <span class="next-title">Growing a diverse, inclusive design team</span>
+      <span class="next-title">Cutting time-to-answer for clinicians through end-to-end service redesign</span>
       <svg width="20" height="12" viewBox="0 0 16 10" fill="none">
         <path d="M1 5h14M10 1l5 4-5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
@@ -161,60 +275,102 @@
 </footer>
 
 <style>
-  .study-hero-wrap { border-bottom: 1px solid var(--border); }
-  .study-hero { padding: 160px 64px 80px; max-width: 1920px; margin: 0 auto; display: grid; grid-template-columns: 1fr 300px; gap: 80px; align-items: start; }
-  .back-link { display: inline-flex; align-items: center; gap: 10px; font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 32px; transition: color 0.25s; }
+  /* ── Hero ── */
+  .study-hero { padding: 30px 64px 10px; max-width: 1500px; margin: 0 auto; text-align: center; }
+  .back-link { display: inline-flex; align-items: center; gap: 10px; font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 40px; transition: color 0.25s; }
   .back-link:hover { color: var(--pop); }
-  .study-title { font-family: var(--serif); font-size: clamp(2.2rem, 4.5vw, 4rem); font-weight: 700; line-height: 1.1; margin-bottom: 22px; }
-  .study-desc { font-size: 1.05rem; color: var(--text-muted); max-width: 780px; line-height: 1.75; }
-  .impact-sidebar { border: 1px solid rgba(255,255,255,0.1); background: var(--bg-2); padding: 28px; position: sticky; top: 72px; }
-  .impact-label { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
-  .impact-label::after { content: ''; flex: 1; height: 1px; background: rgba(200,184,154,0.3); }
-  .impact-bullets { display: flex; flex-direction: column; }
-  .impact-bullet { display: flex; align-items: center; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--border); }
-  .impact-bullet:last-child { border-bottom: none; padding-bottom: 0; }
-  .impact-bullet::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--pop); flex-shrink: 0; }
-  .bullet-text { font-size: 0.9rem; color: var(--text); line-height: 1.5; }
-  .study-cover { width: 100%; max-width: 1920px; margin: 0 auto; height: 500px; background: var(--bg-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .study-title { font-family: var(--serif); font-size: clamp(2.2rem, 4.5vw, 4rem); font-weight: 700; line-height: 1.1; margin-bottom: 28px; }
+  .study-desc { font-size: 1.05rem; color: var(--text-muted); max-width: 780px; line-height: 1.75; margin: 0 auto; }
+  .page-nav { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; padding: 40px 64px; border-bottom: 1px solid var(--border); background: var(--bg); }
+  .page-nav a { font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); transition: color 0.2s; text-decoration: underline; text-underline-offset: 4px; }
+  .page-nav a:hover { color: var(--pop); text-decoration: none; }
+  .page-nav span { color: var(--border); font-size: 0.8rem; user-select: none; }
+
+  /* ── Cover ── */
+  .study-cover { width: 100%; max-width: 1800px; margin: 0 auto; height: 500px; background: var(--bg-2); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: center; overflow: hidden; }
   .cover-img { width: 100%; height: 100%; object-fit: cover; }
   .cover-placeholder { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); border: 1px solid var(--border); padding: 16px 28px; }
-  .study-body { padding: 80px 64px; max-width: 1920px; margin: 0 auto; }
-  .study-body-inner { max-width: 720px; }
-  .study-body-inner h2 { font-family: var(--serif); font-size: 1.75rem; font-weight: 700; margin-bottom: 22px; padding-top: 52px; color: var(--text); }
-  .study-body-inner h2:first-child { padding-top: 0; }
-  .study-body-inner p { font-size: 1rem; line-height: 1.85; color: rgba(240,237,232,0.8); margin-bottom: 18px; }
-  .study-body-inner blockquote { border-left: 2px solid var(--pop); padding: 18px 26px; margin: 36px 0; background: rgba(200,184,154,0.06); font-family: var(--serif); font-size: 1.2rem; font-style: italic; color: var(--text); line-height: 1.6; }
-  .study-body-inner ul { padding-left: 24px; margin-bottom: 20px; color: rgba(240,237,232,0.8); }
-  .study-body-inner li { margin-bottom: 8px; line-height: 1.7; }
-  .study-body-inner strong { color: var(--text); font-weight: 500; }
-  .study-body-inner em { color: var(--accent); }
-  .study-body-inner hr { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
-  .body-img { width: 100%; margin: 36px 0; border: 1px solid var(--border); display: block; }
-  .section-img-ph { width: 100%; aspect-ratio: 16 / 9; margin: 40px 0; background: var(--bg-2); border: 1px dashed rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
-  .section-img-ph::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(-45deg, transparent, transparent 20px, rgba(255,255,255,0.015) 20px, rgba(255,255,255,0.015) 21px); }
-  .section-img-ph span { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); border: 1px dashed rgba(255,255,255,0.12); padding: 8px 16px; position: relative; z-index: 1; }
+
+  /* ── Outcome stat cards ── */
+  .outcome-cards { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; max-width: 980px; margin: 0 auto 64px; padding: 0 24px; }
+  .outcome-card { background: var(--bg-2); border: 1px solid var(--border); border-radius: 4px; padding: 2rem 1.5rem; display: flex; flex-direction: column; gap: 8px; }
+  .outcome-num { font-family: var(--serif); font-size: 3rem; font-weight: 700; line-height: 1; color: var(--text); }
+  .outcome-headline { font-size: 0.95rem; font-weight: 500; color: var(--text); line-height: 1.4; }
+  .outcome-body { font-size: 0.875rem; color: var(--text-muted); line-height: 1.7; margin-top: 4px; }
+
+  @media (max-width: 768px) {
+    .outcome-cards { grid-template-columns: 1fr; }
+  }
+
+  .study-body-centered { padding: 80px 0; }
+
+  .study-body-col { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+
+  .study-body-col h2 { font-family: var(--serif); font-size: 1.75rem; font-weight: 700; margin-bottom: 22px; padding-top: 52px; color: var(--text); }
+  .study-body-col h2:first-child { padding-top: 0; }
+  .study-body-col p { font-size: 1.1em; line-height: 1.85; color: rgba(240,237,232,0.8); margin-bottom: 18px; }
+  .study-body-col a { color: var(--pop); text-decoration: underline; text-underline-offset: 3px; }
+  .study-body-col a:hover { text-decoration: none; }
+  .study-body-col blockquote { border-left: 2px solid var(--pop); padding: 18px 26px; margin: 36px 0; background: rgba(200,184,154,0.06); font-family: var(--serif); font-size: 1.2rem; font-style: italic; color: var(--text); line-height: 1.6; }
+  .study-body-col ul { padding-left: 24px; margin-bottom: 20px; color: rgba(240,237,232,0.8); font-size: 1.1em; line-height: 1.85; }
+  .study-body-col li { margin-bottom: 8px; line-height: 1.7; }
+  .study-body-col strong { color: var(--text); font-weight: 500; }
+  .study-body-col h3 { font-family: var(--serif); font-size: 1.3rem; font-weight: 700; color: #fff; margin-bottom: 22px; }
+  .body-subheading { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); margin-top: 40px; margin-bottom: 12px; }
+
+  /* ── Body images ── */
+  .body-img-ph {
+    width: 100%;
+    max-width: 1280px;
+    margin: 48px auto;
+    min-height: 400px;
+    background: var(--bg-2);
+    border: 1px dashed rgba(255,255,255,0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .body-img-ph::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(-45deg, transparent, transparent 20px, rgba(255,255,255,0.015) 20px, rgba(255,255,255,0.015) 21px);
+  }
+  .body-img-ph span {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    border: 1px dashed rgba(255,255,255,0.12);
+    padding: 8px 16px;
+    position: relative;
+    z-index: 1;
+  }
+  .body-img-ph img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* ── Next case ── */
   .next-case { border-top: 1px solid var(--border); padding: 0 64px 80px; max-width: 1920px; margin: 0 auto; }
   .next-link { display: flex; align-items: center; gap: 24px; padding: 48px 0; transition: gap 0.3s var(--ease); }
   .next-link:hover { gap: 32px; }
   .next-label { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); }
   .next-title { font-family: var(--serif); font-size: 1.6rem; font-weight: 700; flex: 1; }
   .next-link svg { color: var(--pop); flex-shrink: 0; }
+
+  /* ── Responsive ── */
   @media (max-width: 768px) {
-    .study-hero { grid-template-columns: 1fr; padding: 110px 24px 56px; gap: 40px; }
+    .study-hero { padding: 110px 24px 56px; }
     .study-cover { height: 240px; }
-    .study-body { padding: 56px 24px; }
+    .study-body-centered { padding: 56px 0; }
+    .body-img-ph { min-height: 220px; margin: 32px 16px; }
     .next-case { padding: 0 24px 60px; }
   }
-  .cta-btn {
-    display: inline-flex; align-items: center; gap: 14px;
-    font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.12em;
-    text-transform: uppercase; color: var(--pop);
-    border: 1px solid var(--pop-dim); padding: 16px 28px;
-    transition: all 0.3s var(--ease); width: fit-content; margin-top: 28px;
-  }
-  .cta-btn:hover { border-color: var(--pop); color: var(--text); background: var(--pop-glow); }
-  .cta-btn:hover svg { transform: translateX(5px); }
-  .cta-btn svg { transition: transform 0.3s var(--ease); }
 </style>
 
 </body>
