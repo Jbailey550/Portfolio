@@ -125,3 +125,9 @@ Open `style.css` and edit the `:root` block at the top:
 ```
 
 Changing `--accent` will update every highlight across the whole site.
+
+## Design-system homepage
+
+The redesigned homepage loads `tokens.css` (Figma palette, spacing and website roles) and `homepage.css` (layout and interaction). Edit the `--home-*` roles in `tokens.css` to tune the homepage without changing palette foundations. Other pages continue using their existing `style.css` theme; shared design tokens are available there for gradual adoption.
+
+See [DESIGN-SYSTEM.md](DESIGN-SYSTEM.md) for mappings, approved differences from Figma, responsive behaviour, and local preview instructions. The CSS is an explicit snapshot, not an automatic Figma sync. Review redesign changes on their branch before merging to the deployment branch.
