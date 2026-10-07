@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Designing Usable, Accessible Public Services — John Bailey</title>
-  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../style.css?v=case-style-25" />
 </head>
-<body>
+<body class="case-study">
 
 <nav>
   <div class="nav-inner">
@@ -17,7 +17,6 @@
     <div class="nav-links">
       <a href="../cases.html" class="nav-link active">Case Studies</a>
       <a href="../resume.html" class="nav-link ">Résumé</a>
-      <a href="../experiments.html" class="nav-link ">Experiments</a>
       <a href="../contact.html" class="nav-link ">Contact</a>
     </div>
   </div>
@@ -70,49 +69,56 @@
   <div class="study-hero-wrap">
     <div class="study-hero">
       <div class="study-hero-left">
-        <a href="../cases.html" class="back-link">
-          <svg width="16" height="10" viewBox="0 0 16 10" fill="none">
-            <path d="M15 5H1M6 1L1 5l5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          All case studies
-        </a>
         <h1 class="study-title">Cutting time-to-answer for clinicians through end-to-end service redesign</h1>
         <p class="study-desc">Led the redesign of high-risk clinical journeys across NICE's CKS platform, resulting in a 27% improvement in task efficiency across a NICE platform serving 20m+ annual sessions. </p>
-        <a href="https://cks.nice.org.uk" target="_blank" rel="noopener" class="cta-btn">
-          View site
-          <svg width="16" height="10" viewBox="0 0 16 10" fill="none">
-            <path d="M1 5h14M10 1l5 4-5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
       </div>
 
-      
+
     </div>
+  </div>
+
+  <div class="page-nav" aria-label="Page sections">
+    <a href="#outcome">Outcome</a><span>|</span>
+    <a href="#challenge">The Challenge</a><span>|</span>
+    <a href="#role">My Role</a><span>|</span>
+    <a href="#approach">The Approach</a><span>|</span>
+    <a href="#reflection">Reflection</a>
   </div>
 
   <div class="study-cover">
 
- <img src="../images/cks-case.jpg" alt="CKS redesign" class="cover-img" /> 
+ <img src="../images/cks-case.jpg" alt="CKS redesign" class="cover-img" />
   </div>
 
-  <article class="study-body">
-  <div class="study-body-inner">
+  <article class="study-body-centered">
+    <div class="study-body-col"><h2 id="outcome">Outcome</h2><p>The redesign significantly reduced cognitive load and time-to-answer for clinicians using the service. By restructuring the long-form content model and introducing clearer navigation, users could access the clinical guidance they needed in a fraction of the time previously required.</p></div>
+    <div class="outcome-cards"><div class="outcome-card"><div class="outcome-num">27%</div><div class="outcome-headline">Improvement in task efficiency</div><div class="outcome-body">moving from a single-page scrolling model to a task-based navigational structure significantly reduced time-to-answer, allowing clinicians to access critical guidance faster during consultations</div></div>
+<div class="outcome-card"><div class="outcome-headline">Enhanced SEO and discoverability</div><div class="outcome-body">restructuring clinical topics into distinct, semantically marked-up sections led to a measurable increase in search engine prominence, keeping CKS as the primary authority for healthcare queries</div></div>
+<div class="outcome-card"><div class="outcome-headline">Elevated user satisfaction</div><div class="outcome-body">post-launch feedback and usability testing confirmed that the new content hierarchy and "On this page" navigation successfully reduced cognitive load, with additional gains in readability</div></div>
+<div class="outcome-card"><div class="outcome-headline">Performance at scale</div><div class="outcome-body">migration to a modernised codebase eliminated years of technical debt, resulting in a significantly faster, more responsive service that meets modern performance and accessibility standards</div></div></div>
+  <div class="study-body-col">
 
     <h2 id="challenge">The Challenge</h2>
     <p>Clinical Knowledge Summaries (CKS), used by over 400k users a month, is a critical resource for UK primary care practitioners, providing readily accessible evidence and practical guidance for clinical decision-making. While the content remained highly valued, previous user research indicated that the site's navigation was inefficient and difficult to use — particularly for time-poor clinicians managing patients in high-pressure environments.</p>
     <p>Compounding these usability issues, the legacy codebase and bloated file sizes resulted in excessive load times that further hindered access. In a setting where every second counts, these issues directly impacted the service's ability to support effective, real-time patient care.</p>
 
-    
 
-    <div class="section-img-ph"><span><img src="../images/casecks1.jpg" alt="cks old"  /></span></div>
-    
+
+    </div>
+    <div class="body-img-ph"><img src="../images/casecks1.jpg" alt="cks old"  /></div>
+    <div class="study-body-col">
+
 
     <h2 id="role">My Role</h2>
     <p>I led the end-to-end redesign of the CKS service, managing a rigorous four-month delivery timeline across the full GDS lifecycle: Discovery, Alpha, Beta, and Live. I held primary responsibility for establishing and managing the design and research project plan, ensuring every phase was grounded in user evidence. My role was hands-on and strategic, encompassing the synthesis of existing research, user journey mapping, and the iterative design of core components validated through usability testing.</p>
     <p>Critically, I acted as the lead negotiator with our third-party content provider — successfully advocating for essential technical modifications to their data feed, ensuring the infrastructure could support our performance goals and ambitious UX improvements.</p>
 
-     <div class="section-img-ph"><span><img src="../images/cksshot2.jpg" alt="user research from cks"  /></span></div>
-       <div class="section-img-ph"><span><img src="../images/cksshot3.jpg" alt="task testing for cks"  /></span></div>
+     </div>
+    <div class="body-img-ph"><img src="../images/cksshot2.jpg" alt="user research from cks"  /></div>
+    <div class="study-body-col">
+       </div>
+    <div class="body-img-ph"><img src="../images/cksshot3.jpg" alt="task testing for cks"  /></div>
+    <div class="study-body-col">
 
     <h2 id="approach">The Approach</h2>
     <p>I initiated the project with an external horizon scan and a comprehensive heuristic review. I chose this as the starting point to establish a clear baseline and identify immediate usability gaps, which then allowed us to focus 1-to-1 user research on the most critical areas. These sessions revealed that clinicians were frequently overwhelmed by dense content and confused by ambiguous navigation labels.</p>
@@ -123,20 +129,15 @@
     <p>The project's primary constraints were a tight delivery window and a rigid third-party content feed. Any technical adjustments required careful negotiation to secure the supplier's development resources. I prioritised pain points by balancing user impact against technical feasibility, based on their feedback — transforming a potential bottleneck into a genuine partnership, ensuring our focus areas were in the best interest of both NICE and the supplier.</p>
     <p>Simultaneously, I led a restructure of the long-form content, moving away from a high-friction "all-on-one-page" model to distinct, navigable sections. By introducing clear content hierarchies and an "On this page" navigation component, I ensured clinicians could jump directly to relevant information — significantly reducing cognitive load and time-to-answer in clinical settings.</p>
 
-         <div class="section-img-ph"><span><img src="../images/cksshot4.jpg" alt="homepage new cks"  /></span></div>
-       <div class="section-img-ph"><span><img src="../images/cksshot5.jpg" alt="landing page new cks"  /></span></div>
-         <div class="section-img-ph"><span><img src="../images/cksshot6.jpg" alt="internal page excample new cks"  /></span></div>
-
-    <h2 id="outcome">Outcome</h2>
-    <p>The redesign significantly reduced cognitive load and time-to-answer for clinicians using the service. By restructuring the long-form content model and introducing clearer navigation, users could access the clinical guidance they needed in a fraction of the time previously required.</p>
-    <ul>
-      <li><strong>27% improvement in task efficiency</strong> — moving from a single-page scrolling model to a task-based navigational structure significantly reduced time-to-answer, allowing clinicians to access critical guidance faster during consultations</li>
-      <li><strong>Enhanced SEO and discoverability</strong> — restructuring clinical topics into distinct, semantically marked-up sections led to a measurable increase in search engine prominence, keeping CKS as the primary authority for healthcare queries</li>
-      <li><strong>Elevated user satisfaction</strong> — post-launch feedback and usability testing confirmed that the new content hierarchy and "On this page" navigation successfully reduced cognitive load, with additional gains in readability</li>
-      <li><strong>Performance at scale</strong> — migration to a modernised codebase eliminated years of technical debt, resulting in a significantly faster, more responsive service that meets modern performance and accessibility standards</li>
-    </ul>
-
-    
+         </div>
+    <div class="body-img-ph"><img src="../images/cksshot4.jpg" alt="homepage new cks"  /></div>
+    <div class="study-body-col">
+       </div>
+    <div class="body-img-ph"><img src="../images/cksshot5.jpg" alt="landing page new cks"  /></div>
+    <div class="study-body-col">
+         </div>
+    <div class="body-img-ph"><img src="../images/cksshot6.jpg" alt="internal page excample new cks"  /></div>
+    <div class="study-body-col">
 
     <h2 id="reflection">Reflection</h2>
     <p>We overestimated our ability to change the core experience. Time was spent on design iterations that turned out to be technically unfeasible — including navigation improvements that couldn't be implemented without significant cost implications from the third-party content feed supplier. In future projects, I'd bring those conversations with external providers in much earlier, and with the right decision-makers in the room from the start.</p>
@@ -144,16 +145,6 @@
 
   </div>
   </article>
-
-  <div class="next-case">
-    <a href="design-system.html" class="next-link">
-      <span class="next-label">Next project</span>
-      <span class="next-title">Creating a scalable and consistent design system</span>
-      <svg width="20" height="12" viewBox="0 0 16 10" fill="none">
-        <path d="M1 5h14M10 1l5 4-5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </a>
-  </div>
 
 </main>
 
@@ -164,60 +155,94 @@
 </footer>
 
 <style>
-  .study-hero-wrap { border-bottom: 1px solid var(--border); }
-  .study-hero { padding: 160px 64px 80px; max-width: 1920px; margin: 0 auto; display: grid; grid-template-columns: 1fr 300px; gap: 80px; align-items: start; }
-  .back-link { display: inline-flex; align-items: center; gap: 10px; font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 32px; transition: color 0.25s; }
-  .back-link:hover { color: var(--pop); }
-  .study-title { font-family: var(--serif); font-size: clamp(2.2rem, 4.5vw, 4rem); font-weight: 700; line-height: 1.1; margin-bottom: 22px; }
-  .study-desc { font-size: 1.05rem; color: var(--text-muted); max-width: 780px; line-height: 1.75; }
-  .impact-sidebar { border: 1px solid rgba(255,255,255,0.1); background: var(--bg-2); padding: 28px; position: sticky; top: 72px; }
-  .impact-label { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
-  .impact-label::after { content: ''; flex: 1; height: 1px; background: rgba(200,184,154,0.3); }
-  .impact-bullets { display: flex; flex-direction: column; }
-  .impact-bullet { display: flex; align-items: center; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--border); }
-  .impact-bullet:last-child { border-bottom: none; padding-bottom: 0; }
-  .impact-bullet::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--pop); flex-shrink: 0; }
-  .bullet-text { font-size: 0.9rem; color: var(--text); line-height: 1.5; }
-  .study-cover { width: 100%; max-width: 1920px; margin: 0 auto; height: 500px; background: var(--bg-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  /* ── Hero ── */
+  .study-hero { padding: 30px 64px 10px; max-width: 1500px; margin: 0 auto; text-align: center; }
+  .study-title {     margin-bottom: 28px; }
+  .study-desc {  color: var(--text-muted); max-width: 780px;  margin: 0 auto; }
+  .page-nav { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; padding: 40px 64px; border-bottom: 1px solid var(--border); background: var(--bg); }
+  .page-nav a { font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); transition: color 0.2s; text-decoration: underline; text-underline-offset: 4px; }
+  .page-nav a:hover { color: var(--pop); text-decoration: none; }
+  .page-nav span { color: var(--border); font-size: 0.8rem; user-select: none; }
+
+  /* ── Cover ── */
+  .study-cover { width: 100%; max-width: 1800px; margin: 0 auto; height: 500px; background: var(--bg-2); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: center; overflow: hidden; }
   .cover-img { width: 100%; height: 100%; object-fit: cover; }
   .cover-placeholder { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); border: 1px solid var(--border); padding: 16px 28px; }
-  .study-body { padding: 80px 64px; max-width: 1920px; margin: 0 auto; }
-  .study-body-inner { max-width: 720px; }
-  .study-body-inner h2 { font-family: var(--serif); font-size: 1.75rem; font-weight: 700; margin-bottom: 22px; padding-top: 52px; color: var(--text); }
-  .study-body-inner h2:first-child { padding-top: 0; }
-  .study-body-inner p { font-size: 1rem; line-height: 1.85; color: rgba(240,237,232,0.8); margin-bottom: 18px; }
-  .study-body-inner blockquote { border-left: 2px solid var(--pop); padding: 18px 26px; margin: 36px 0; background: rgba(200,184,154,0.06); font-family: var(--serif); font-size: 1.2rem; font-style: italic; color: var(--text); line-height: 1.6; }
-  .study-body-inner ul { padding-left: 24px; margin-bottom: 20px; color: rgba(240,237,232,0.8); }
-  .study-body-inner li { margin-bottom: 8px; line-height: 1.7; }
-  .study-body-inner strong { color: var(--text); font-weight: 500; }
-  .study-body-inner em { color: var(--accent); }
-  .study-body-inner hr { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
-  .body-img { width: 100%; margin: 36px 0; border: 1px solid var(--border); display: block; }
-  .section-img-ph { width: 100%; aspect-ratio: 16 / 9; margin: 40px 0; background: var(--bg-2); border: 1px dashed rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
-  .section-img-ph::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(-45deg, transparent, transparent 20px, rgba(255,255,255,0.015) 20px, rgba(255,255,255,0.015) 21px); }
-  .section-img-ph span { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); border: 1px dashed rgba(255,255,255,0.12); padding: 8px 16px; position: relative; z-index: 1; }
-  .next-case { border-top: 1px solid var(--border); padding: 0 64px 80px; max-width: 1920px; margin: 0 auto; }
-  .next-link { display: flex; align-items: center; gap: 24px; padding: 48px 0; transition: gap 0.3s var(--ease); }
-  .next-link:hover { gap: 32px; }
-  .next-label { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); }
-  .next-title { font-family: var(--serif); font-size: 1.6rem; font-weight: 700; flex: 1; }
-  .next-link svg { color: var(--pop); flex-shrink: 0; }
+
+  /* ── Outcome stat cards ── */
+  .outcome-cards { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; max-width: 980px; margin: 0 auto 64px; padding: 0 24px; }
+  .outcome-card { background: var(--bg-2); border: 1px solid var(--border); border-radius: 4px; padding: 2rem 1.5rem; display: flex; flex-direction: column; gap: 8px; }
+  .outcome-num { font-family: var(--serif); font-size: 3rem; font-weight: 700; line-height: 1; color: var(--text); }
+  .outcome-headline { font-size: 0.95rem; font-weight: 500; color: var(--text); line-height: 1.4; }
+  .outcome-body { font-size: 0.875rem; color: var(--text-muted); line-height: 1.7; margin-top: 4px; }
+
   @media (max-width: 768px) {
-    .study-hero { grid-template-columns: 1fr; padding: 110px 24px 56px; gap: 40px; }
+    .outcome-cards { grid-template-columns: 1fr; }
+  }
+
+  .study-body-centered { padding: 80px 0; }
+
+  .study-body-col { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+
+  .study-body-col h2 {    margin-bottom: 22px; padding-top: 52px; color: var(--text); }
+  .study-body-col h2:first-child { padding-top: 0; }
+  .study-body-col p {   color: rgba(240,237,232,0.8); margin-bottom: 18px; }
+  .study-body-col a { color: var(--pop); text-decoration: underline; text-underline-offset: 3px; }
+  .study-body-col a:hover { text-decoration: none; }
+  .study-body-col blockquote { border-left: 2px solid var(--pop); padding: 18px 26px; margin: 36px 0; background: rgba(200,184,154,0.06); font-family: var(--serif); font-size: 1.2rem; font-style: italic; color: var(--text); line-height: 1.6; }
+  .study-body-col ul { padding-left: 24px; margin-bottom: 20px; color: rgba(240,237,232,0.8);   }
+  .study-body-col li { margin-bottom: 8px;  }
+  .study-body-col strong { color: var(--text); font-weight: 500; }
+  .study-body-col h3 {    color: #fff; margin-bottom: 22px; }
+  .body-subheading {   letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); margin-top: 40px; margin-bottom: 12px; }
+
+  /* ── Body images ── */
+  .body-img-ph {
+    width: calc(100% - 48px);
+    max-width: 720px;
+    margin: 48px auto;
+    min-height: 0;
+    background: var(--bg-2);
+    border: 1px dashed rgba(255,255,255,0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .body-img-ph::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(-45deg, transparent, transparent 20px, rgba(255,255,255,0.015) 20px, rgba(255,255,255,0.015) 21px);
+  }
+  .body-img-ph span {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    border: 1px dashed rgba(255,255,255,0.12);
+    padding: 8px 16px;
+    position: relative;
+    z-index: 1;
+  }
+  .body-img-ph img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .study-hero { padding: 110px 24px 56px; }
     .study-cover { height: 240px; }
-    .study-body { padding: 56px 24px; }
-    .next-case { padding: 0 24px 60px; }
+    .study-body-centered { padding: 56px 0; }
+    .body-img-ph { margin: 32px auto; }
   }
-  .cta-btn {
-    display: inline-flex; align-items: center; gap: 14px;
-    font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.12em;
-    text-transform: uppercase; color: var(--pop);
-    border: 1px solid var(--pop-dim); padding: 16px 28px;
-    transition: all 0.3s var(--ease); width: fit-content; margin-top: 28px;
-  }
-  .cta-btn:hover { border-color: var(--pop); color: var(--text); background: var(--pop-glow); }
-  .cta-btn:hover svg { transform: translateX(5px); }
-  .cta-btn svg { transition: transform 0.3s var(--ease); }
+
+  .outcome-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  @media (max-width: 768px) { .outcome-cards { grid-template-columns: 1fr; } }
 </style>
 
 </body>

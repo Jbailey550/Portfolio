@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Case Studies — John Bailey</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=blue-divider-4" />
 </head>
 <body>
 
@@ -17,7 +17,6 @@
     <div class="nav-links">
       <a href="cases.html" class="nav-link active">Case Studies</a>
       <a href="resume.html" class="nav-link ">Résumé</a>
-      <a href="experiments.html" class="nav-link ">Experiments</a>
       <a href="contact.html" class="nav-link ">Contact</a>
     </div>
   </div>
@@ -69,9 +68,8 @@
 
   <div class="page-hero-wrap">
   <div class="page-hero">
-    <div class="page-label">Work</div>
     <h1 class="page-title">Case Studies</h1>
-    <p class="page-sub">End-to-end design work spanning mobile apps, web products, and design systems — with the research and decisions that got there.</p>
+    <p class="page-sub">Work spanning end-to-end product design, team development, design systems and vision pieces.</p>
   </div>
   </div>
 
@@ -85,7 +83,6 @@
   <div class="cases-list">
 
     <a href="/cases/ccmsvision.html" class="case-row">
-      <div class="row-num">01</div>
       <div class="row-info">
         <h3>Defining a design vision to secure a £1m+ Investment in a new CCMS platform</h3>
         <p>Led and de-risked the transformation of NICE's publishing and clinical guidance model, delivering a UX proof-of-concept that secured £1M+ in funding for a new CCMS.</p>
@@ -94,7 +91,6 @@
     </a>
 
     <a href="cases/design-system.html" class="case-row">
-      <div class="row-num">02</div>
       <div class="row-info">
         <h3>Creating and scaling a unified NICE Design System</h3>
         <p>Took NICE from fragmented Bootstrap codebases to a unified design system powering 30+ products — delivering a 13% efficiency gain and 32% faster load time.</p>
@@ -103,7 +99,6 @@
     </a>
 
     <a href="cases/ucdteam.html" class="case-row">
-      <div class="row-num">03</div>
       <div class="row-info">
         <h3>Creating the conditions for UCD to influence organisational outcomes</h3>
         <p>Created the organisational conditions for user-centred design to influence strategy, prioritisation and investment across NICE.</p>
@@ -112,7 +107,6 @@
     </a>
 
     <a href="cases/cks-redesign.html" class="case-row">
-      <div class="row-num">04</div>
       <div class="row-info">
         <h3>Cutting time-to-answer for clinicians through end-to-end service redesign</h3>
         <p>Redesigned the CKS service — improving task efficiency by 27% and cutting time-to-answer for 400k primary care clinicians under real-time consultation pressure.</p>
@@ -131,10 +125,11 @@
 </footer>
 
 <style>
+  .page-hero-wrap { border-bottom: 0; }
   .cases-list { padding: 0 64px 120px; max-width: 1920px; margin: 0 auto; }
 
   .case-row {
-    display: grid; grid-template-columns: 80px 1fr auto;
+    display: grid; grid-template-columns: minmax(0, 1fr) auto;
     align-items: center; gap: 40px;
     padding: 36px 0; border-bottom: 1px solid var(--border);
     transition: padding-left 0.35s var(--ease);
@@ -148,25 +143,21 @@
   .case-row:hover { padding-left: 18px; }
   .case-row:hover::before { opacity: 1; }
 
-  .row-num {
-    font-family: var(--mono); font-size: 0.65rem;
-    letter-spacing: 0.12em; color: var(--text-dim); text-transform: uppercase;
-  }
   .row-info h3 {
-    font-family: var(--serif); font-size: 1.5rem; font-weight: 700; margin-bottom: 6px;
+       margin-bottom: 6px;
   }
   .row-info p { font-size: 1rem; color: var(--text-muted); }
 
   .row-cta {
     display: inline-flex; align-items: center; gap: 8px; white-space: nowrap;
-    font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--pop); transition: gap 0.3s var(--ease);
+    font-family: var(--font-text); font-size: var(--type-body-size); letter-spacing: normal;
+    text-transform: none; color: var(--pop); transition: gap 0.3s var(--ease);
   }
   .case-row:hover .row-cta { gap: 14px; }
 
   @media (max-width: 768px) {
     .cases-list { padding: 0 24px 80px; }
-    .case-row { grid-template-columns: 56px 1fr; }
+    .case-row { grid-template-columns: minmax(0, 1fr); }
     .row-cta { display: none; }
   }
 </style>

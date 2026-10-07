@@ -1,14 +1,17 @@
+@import url('tokens.css?v=outcome-weight-25');
+
 /* ============================================================
    PORTFOLIO — GLOBAL STYLES
    To change colours/fonts for the whole site, edit :root below
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg:          #0d0d0d;
+  --bg:          var(--indigo-default);
+  --header-accent: #FF2E8C; /* Matches the approved new-version pink. */
   --bg-2:        #141414;
   --bg-3:        #1a1a1a;
   --border:      rgba(255,255,255,0.08);
@@ -22,9 +25,9 @@
   --pop:         #5bbfad;
   --pop-glow:    rgba(91,191,173,0.12);
   --pop-dim:     rgba(91,191,173,0.5);
-  --serif:       'Playfair Display', Georgia, serif;
-  --sans:        'DM Sans', system-ui, sans-serif;
-  --mono:        'DM Mono', monospace;
+  --serif: var(--font-text);
+  --sans: var(--font-text);
+  --mono: var(--font-text);
   --ease:        cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
   /*
@@ -38,22 +41,18 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
-  /* Anchor links stop below the fixed nav */
-  scroll-padding-top: var(--nav-height);
+  /* Header is in normal flow; anchors need only a small gap. */
+  scroll-padding-top: var(--scale-400);
 }
 
 body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--sans);
-  font-weight: 300;
-  line-height: 1.6;
-  /*
-   * THE KEY FIX: body is offset by the nav's full rendered height
-   * (including the iOS safe-area-inset-top that the nav absorbs).
-   * Nothing can ever scroll under the fixed nav.
-   */
-  padding-top: var(--nav-height);
+  font-size: var(--type-body-size);
+  font-weight: var(--type-body-weight);
+  line-height: var(--type-body-line);
+  padding-top: 0;
 }
 
 a { color: inherit; text-decoration: none; }
@@ -82,9 +81,9 @@ main { animation: fadeUp 0.55s var(--ease) both; }
 
 /* ---- NAV ---- */
 nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-  background: #0d0d0d;
-  border-bottom: 1px solid var(--border);
+  position: relative; z-index: 1000;
+  background: var(--indigo-default);
+  border-bottom: 1px solid var(--blue-900);
   /*
    * Absorbs the notch / Dynamic Island height (requires viewport-fit=cover
    * in the <meta viewport> tag on every page).
@@ -99,14 +98,16 @@ nav {
   padding: 24px 64px;
 }
 .nav-logo {
-  font-family: var(--serif); font-size: 1.4rem;
-  color: #ffffff; letter-spacing: 0.02em;
+  font-family: var(--font-text); font-size: 30px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--neutral-white); letter-spacing: -1px; white-space: nowrap;
 }
-.nav-logo span { color: var(--accent); }
+.nav-logo span { color: var(--header-accent); }
 .nav-links { display: flex; gap: 40px; align-items: center; }
 .nav-link {
-  font-family: var(--mono); font-size: 0.8rem; letter-spacing: 0.14em;
-  text-transform: uppercase; color: #ffffff;
+  font-family: var(--font-text); font-size: 18px; letter-spacing: -0.4px;
+  font-weight: var(--font-weight-semibold);
+  text-transform: none; color: var(--neutral-white);
   position: relative; transition: color 0.25s;
 }
 .nav-link::after {
@@ -148,13 +149,13 @@ footer p {
   text-transform: uppercase; color: var(--accent); margin-bottom: 20px;
 }
 .page-title {
-  font-family: var(--serif);
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
-  font-weight: 700; line-height: 1.1;
+
+
+
 }
 .page-sub {
-  font-size: 1rem; color: var(--text-muted);
-  max-width: 480px; margin-top: 20px; line-height: 1.75;
+   color: var(--text-muted);
+  max-width: 480px; margin-top: 20px;
 }
 
 /* ---- UTILITY ---- */
@@ -204,7 +205,7 @@ footer p {
     position: fixed;
     /* Cover the full screen including the safe-area strip */
     top: 0; left: 0; right: 0; bottom: 0;
-    background: #0d0d0d;  /* must be opaque hex — var(--bg) can be overridden */
+    background: var(--indigo-default);  /* Opaque midnight background for the mobile menu. */
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -221,8 +222,82 @@ footer p {
     z-index: 2001;
   }
 
-  .nav-link { font-size: 1rem; letter-spacing: 0.12em; }
+  .nav-link { font-size: 18px; letter-spacing: -0.4px; }
 
   .footer-inner { padding: 20px; flex-direction: column; gap: 10px; text-align: center; }
   .page-hero { padding: 48px 20px 48px; }
+}
+
+/* Form controls use the shared font rather than browser defaults. */
+button, input, select, textarea { font-family: var(--font-text); }
+
+/* Shared type roles. Component spacing and colours remain local. */
+h1, .type-h1 { font-family: var(--font-heading); font-size: var(--type-h1-size); font-weight: var(--type-h1-weight); line-height: var(--type-h1-line); }
+h2, .type-h2 { font-family: var(--font-heading); font-size: var(--type-h2-size); font-weight: var(--type-h2-weight); line-height: var(--type-h2-line); }
+h3, .type-h3 { font-family: var(--font-heading); font-size: var(--type-h3-size); font-weight: var(--type-h3-weight); line-height: var(--type-h3-line); }
+h4, .type-h4 { font-family: var(--font-heading); font-size: var(--type-h4-size); font-weight: var(--type-h4-weight); line-height: var(--type-h4-line); }
+h5, .type-h5 { font-family: var(--font-heading); font-size: var(--type-h5-size); font-weight: var(--type-h5-weight); line-height: var(--type-h5-line); }
+h6, .type-h6 { font-family: var(--font-heading); font-size: var(--type-h6-size); font-weight: var(--type-h6-weight); line-height: var(--type-h6-line); }
+.lead, .hero-sub, .about-text, .skills-list, .page-sub, .study-desc { font-family: var(--font-text); font-size: var(--type-lead-size); font-weight: var(--type-lead-weight); line-height: var(--type-lead-line); }
+.card-title, .exp-title, .row-info h3 { font-size: var(--type-h5-size); font-weight: var(--type-h5-weight); line-height: var(--type-h5-line); }
+.card-desc, .study-body-col p, .study-body-col li, .study-body-inner p, .study-body-inner li { font-size: var(--type-body-size); font-weight: var(--type-body-weight); line-height: var(--type-body-line); }
+
+/* Case-study reading copy, including introductory paragraphs and lists. */
+.case-study .study-desc { color: var(--neutral-white); }
+.case-study .study-body-col .body-subheading {
+  font-size: var(--type-h4-size);
+  line-height: var(--type-h4-line);
+  font-weight: var(--type-h4-weight);
+  letter-spacing: normal;
+  text-transform: none;
+}
+.case-study main h2 {
+  font-size: var(--type-h3-size);
+  line-height: var(--type-h3-line);
+  font-weight: var(--type-h3-weight);
+}
+.case-study .page-nav a { color: var(--neutral-white); }
+.case-study .page-nav a:hover { color: var(--neutral-white); text-decoration: none; }
+.case-study .outcome-card {
+  background: var(--neutral-white);
+  border: 0;
+  border-radius: 0;
+  padding: var(--scale-800);
+  color: var(--pink-default);
+}
+.case-study .outcome-num { color: var(--pink-default); }
+.case-study .outcome-headline {
+  color: var(--pink-default);
+  font-size: var(--type-h5-size);
+  line-height: var(--type-h5-line);
+  font-weight: var(--type-h5-weight);
+}
+.case-study .outcome-body {
+  color: var(--neutral-black);
+  font-size: var(--type-study-body-size);
+  line-height: var(--type-study-body-line);
+}
+.case-study .impact-sidebar { background: var(--neutral-white); color: var(--neutral-black); }
+.case-study .impact-label { color: var(--pink-default); }
+.case-study .impact-sidebar .bullet-text { color: var(--neutral-black); }
+.case-study .outcome-card,
+.case-study .outcome-card *,
+.case-study .impact-sidebar,
+.case-study .impact-sidebar * { font-weight: var(--font-weight-medium); }
+.case-study .outcome-card .outcome-num { font-weight: var(--font-weight-extrabold); }
+.case-study main p,
+.case-study main p strong,
+.case-study main p em,
+.case-study .study-body-col li,
+.case-study .study-body-col li strong,
+.case-study .study-body-col li em,
+.case-study .study-body-inner li,
+.case-study .study-body-inner li strong,
+.case-study .study-body-inner li em { color: var(--neutral-white); }
+.case-study main p,
+.case-study .study-body-col li,
+.case-study .study-body-inner li {
+  font-size: var(--type-study-body-size);
+  line-height: var(--type-study-body-line);
+  font-weight: var(--type-body-weight);
 }

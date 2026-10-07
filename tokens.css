@@ -1,0 +1,139 @@
+/* Portfolio DS: verified Figma snapshot, 2 October 2026.
+ * Name mapping: Colour base / Blue/Default -> --blue-default.
+ * Explicit export, not a live Figma connection. See DESIGN-SYSTEM.md. */
+:root {
+  --pink-50: #FFF5F9;
+  --pink-100: #FFE7F2;
+  --pink-200: #FECCE2;
+  --pink-300: #FEA8CE;
+  --pink-400: #FD85BA;
+  --pink-500: #FD5FA5;
+  --pink-default: #FC3A90;
+  --pink-700: #CA2E73;
+  --pink-800: #972356;
+  --pink-900: #65173A;
+  --neutral-black: #000000;
+  --neutral-800: #1C1C1C;
+  --neutral-700: #393939;
+  --neutral-default: #555555;
+  --neutral-500: #717171;
+  --neutral-400: #8E8E8E;
+  --neutral-300: #AAAAAA;
+  --neutral-200: #C6C6C6;
+  --neutral-100: #E3E3E3;
+  --neutral-white: #FFFFFF;
+  --indigo-50: #F3F3F6;
+  --indigo-100: #E2E1E9;
+  --indigo-200: #C0BECF;
+  --indigo-300: #9491AE;
+  --indigo-400: #68658D;
+  --indigo-500: #39356A;
+  --indigo-default: #0B0647;
+  --indigo-700: #090539;
+  --indigo-800: #07042B;
+  --indigo-900: #04021C;
+  --purple-50: #F4F3FC;
+  --purple-100: #E5E2F7;
+  --purple-200: #C7BFEF;
+  --purple-300: #A193E3;
+  --purple-400: #7A67D8;
+  --purple-500: #5139CC;
+  --purple-default: #280AC0;
+  --purple-700: #20089A;
+  --purple-800: #180673;
+  --purple-900: #10044D;
+  --blue-50: #F2F9FF;
+  --blue-100: #E0F1FF;
+  --blue-200: #BDE1FF;
+  --blue-300: #8FCCFF;
+  --blue-400: #61B8FF;
+  --blue-500: #30A2FF;
+  --blue-default: #008CFF;
+  --blue-700: #0070CC;
+  --blue-800: #005499;
+  --blue-900: #003866;
+  --yellow-600: #FFC300;
+  --status-success-base: #15803D;
+  --status-success-tint: #F0FDF4;
+  --status-warning-base: #B45309;
+  --status-warning-tint: #FFFBEB;
+  --status-error-base: #DC2626;
+  --status-error-tint: #FEF2F2;
+  --status-information-base: #0369A1;
+  --status-information-tint: #F0F9FF;
+  --scale-0: 0px;
+  --scale-1: 1px;
+  --scale-50: 2px;
+  --scale-100: 4px;
+  --scale-200: 8px;
+  --scale-300: 12px;
+  --scale-400: 16px;
+  --scale-500: 20px;
+  --scale-600: 24px;
+  --scale-700: 28px;
+  --scale-800: 32px;
+  --scale-900: 36px;
+  --scale-1000: 40px;
+  --scale-1100: 48px;
+  --scale-1200: 52px;
+  --scale-1300: 64px;
+  --font-heading: 'Outfit', sans-serif;
+  --font-text: 'Outfit', sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-extrabold: 800;
+  --font-weight-semibold: 600;
+
+}
+
+/* Responsive typography: Outfit; mobile through 640px. */
+:root {
+  --type-h1-size: 3.75rem;
+  --type-h1-line: 4.5rem;
+  --type-h1-weight: var(--font-weight-semibold);
+  --type-h2-size: 3rem;
+  --type-h2-line: 3.5rem;
+  --type-h2-weight: var(--font-weight-semibold);
+  --type-h3-size: 2.5rem;
+  --type-h3-line: 3rem;
+  --type-h3-weight: var(--font-weight-semibold);
+  --type-h4-size: 2rem;
+  --type-h4-line: 2.5rem;
+  --type-h4-weight: var(--font-weight-semibold);
+  --type-h5-size: 1.5rem;
+  --type-h5-line: 1.75rem;
+  --type-h5-weight: var(--font-weight-semibold);
+  --type-h6-size: 1.25rem;
+  --type-h6-line: 1.5rem;
+  --type-h6-weight: var(--font-weight-semibold);
+  --type-study-body-size: 1.125rem;
+  --type-study-body-line: 1.75rem;
+  --type-lead-size: 1.25rem;
+  --type-lead-line: 1.75rem;
+  --type-lead-weight: var(--font-weight-regular);
+  --type-body-size: 1rem;
+  --type-body-line: 1.5rem;
+  --type-body-weight: var(--font-weight-regular);
+}
+@media (max-width: 640px) {
+  :root {
+    --type-h1-size: 3rem;
+    --type-h1-line: 3.5rem;
+    --type-h2-size: 2.5rem;
+    --type-h2-line: 3rem;
+    --type-h3-size: 2rem;
+    --type-h3-line: 2.5rem;
+    --type-h4-size: 1.75rem;
+    --type-h4-line: 2rem;
+    --type-h5-size: 1.5rem;
+    --type-h5-line: 1.75rem;
+    --type-h6-size: 1.25rem;
+    --type-h6-line: 1.5rem;
+  }
+}
+
+/* Homepage statement: fluid custom H1 with proportional line height. */
+:root {
+  --type-hero-size: clamp(2rem, calc(1.5rem + 2.083333vw), 3.375rem);
+  --type-hero-line: 1.185185;
+}
