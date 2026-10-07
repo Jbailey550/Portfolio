@@ -301,3 +301,9 @@ h6, .type-h6 { font-family: var(--font-heading); font-size: var(--type-h6-size);
   line-height: var(--type-study-body-line);
   font-weight: var(--type-body-weight);
 }
+
+/* Compact case-study heroes at the existing mobile breakpoint. */
+@media (max-width: 768px) {
+  .case-study .study-title { font-size: 34px; line-height: 40px; }
+  .case-study .study-hero { padding-top: 55px; padding-bottom: 0; }
+}
